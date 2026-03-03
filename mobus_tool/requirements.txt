@@ -1,0 +1,6 @@
+pymodbus==3.5.4
+pyserial==3.5
+tkinter-tooltip==2.1.0
+pandas==2.1.4
+openpyxl==3.1.2
+matplotlib==3.8.2 

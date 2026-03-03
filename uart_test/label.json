@@ -1,0 +1,106 @@
+{
+    "language": {
+        "EN": "中文",
+        "CN": "English"
+    },
+    "serial_config": {
+        "EN": "Serial Port Configuration",
+        "CN": "串口配置"
+    },
+    "port": {
+        "EN": "Port:",
+        "CN": "端口:"
+    },
+    "baudrate": {
+        "EN": "Baudrate:",
+        "CN": "波特率:"
+    },
+    "data_bits": {
+        "EN": "Data Bits:",
+        "CN": "数据位:"
+    },
+    "stop_bits": {
+        "EN": "Stop Bits:",
+        "CN": "停止位:"
+    },
+    "parity": {
+        "EN": "Parity:",
+        "CN": "校验位:"
+    },
+    "connect": {
+        "EN": "Connect",
+        "CN": "连接"
+    },
+    "disconnect": {
+        "EN": "Disconnect",
+        "CN": "断开"
+    },
+    "connected": {
+        "EN": "Connected",
+        "CN": "已连接"
+    },
+    "disconnected": {
+        "EN": "Disconnected",
+        "CN": "未连接"
+    },
+    "refresh": {
+        "EN": "Refresh",
+        "CN": "刷新"
+    },
+    "read_all": {
+        "EN": "Read All",
+        "CN": "全部读取"
+    },
+    "write_all": {
+        "EN": "Write All",
+        "CN": "全部写入"
+    },
+    "upgrade_mcu": {
+        "EN": "Upgrade MCU",
+        "CN": "升级MCU固件"
+    },
+    "cycle_send": {
+        "EN": "Cycle Send",
+        "CN": "循环发送"
+    },
+    "F0_response": {
+        "EN": "F0 Response",
+        "CN": "回复F0"
+    },
+    "40/50_report": {
+        "EN": "40/50 report",
+        "CN": "回复40/50"
+    },
+    "read": {
+        "EN": "Read",
+        "CN": "读取"
+    },
+    "write": {
+        "EN": "Write",
+        "CN": "写入"
+    },
+    "write_ok": {
+        "EN": "Write OK",
+        "CN": "写入成功"
+    },
+    "communication_log": {
+        "EN": "Communication Log",
+        "CN": "通信日志"
+    },
+    "clear_log": {
+        "EN": "Clear Log",
+        "CN": "清除日志"
+    },
+    "save_log": {
+        "EN": "Save Log",
+        "CN": "保存日志"
+    },
+    "expand": {
+        "EN": "[+]",
+        "CN": "[+]"
+    },
+    "collapse": {
+        "EN": "[-]",
+        "CN": "[-]"
+    }
+}

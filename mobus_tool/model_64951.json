@@ -1,0 +1,102 @@
+{
+    "group": {
+        "label": "Model 64951",
+        "name": "pu_Custom",
+        "points": [
+            {
+                "name": "ID",
+                "label": "Model ID",
+                "desc": "Model identifier",
+                "type": "uint16",
+                "size": 1,
+                "static": "S",
+                "mandatory": "M",
+                "offset": 0
+            },
+            {
+                "name": "L",
+                "label": "Model Length",
+                "desc": "Model length",
+                "type": "uint16",
+                "size": 1,
+                "static": "S",
+                "mandatory": "M",
+                "offset": 1
+            },
+            {
+                "name": "model_64951_version ",
+                "label": "model_64951_version ",
+                "desc": "model_64951_version ",
+                "type": "uint16",
+                "size": 1,
+                "offset": 2
+            },
+            {
+                "access": "RW",
+                "name": "password",
+                "label": "password",
+                "desc": "password",
+                "type": "string",
+                "size": 8,
+                "offset": 3
+            },
+            {
+                "access": "RW",
+                "name": "function_switch",
+                "label": "function switch",
+                "desc": "function switch",
+                "type": "enum16",
+                "size": 1,
+                "offset": 11,
+                "symbols": [
+                    {
+                        "name": "OFF",
+                        "value": 0
+                    },
+                    {
+                        "name": "ON",
+                        "value": 1
+                    }
+
+                ]
+            },     
+            {
+                "access": "RW",
+                "name": "mcu_write_address",
+                "label": "mcu_write_address",
+                "desc": "mcu_write_address",
+                "type": "uint16",
+                "size": 1,
+                "offset": 12
+            },
+            {
+                "access": "RW",
+                "name": "mcu_write_data",
+                "label": "mcu_write_data",
+                "desc": "mcu_write_data",
+                "type": "uint32",
+                "size": 2,
+                "offset": 13
+            },
+            {
+                "access": "RW",
+                "name": "mcu_read_address",
+                "label": "mcu_read_address",
+                "desc": "mcu_read_address",
+                "type": "uint16",
+                "size": 1,
+                "offset": 15
+            },
+            {
+                "name": "mcu_read_data",
+                "label": "mcu_read_data",
+                "desc": "mcu_read_data",
+                "type": "uint32",
+                "size": 2,
+                "offset": 16
+            }
+        ],
+        "type": "group"
+    },
+    "id": 64951
+} 

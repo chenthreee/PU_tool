@@ -1,0 +1,8 @@
+{
+  "tcp_host": "192.168.1.100",
+  "tcp_port": "502",
+  "rtu_port": "COM1",
+  "baudrate": "9600",
+  "start_address": "40000",
+  "refresh_interval": "5"
+}

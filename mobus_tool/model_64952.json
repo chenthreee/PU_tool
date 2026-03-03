@@ -1,0 +1,830 @@
+{
+    "group": {
+        "label": "Model 64952",
+        "name": "pu_Custom",
+        "points": [
+            {
+                "name": "ID",
+                "label": "Model ID",
+                "desc": "Model identifier",
+                "type": "uint16",
+                "size": 1,
+                "static": "S",
+                "mandatory": "M",
+                "offset": 0
+            },
+            {
+                "name": "L",
+                "label": "Model Length",
+                "desc": "Model length",
+                "type": "uint16",
+                "size": 1,
+                "static": "S",
+                "mandatory": "M",
+                "offset": 1
+            },
+            {
+                "name": "model_64952_version ",
+                "label": "model_64952_version ",
+                "desc": "model_64952_version ",
+                "type": "uint16",
+                "size": 1,
+                "offset": 2
+            },
+            {
+                "access": "RW",
+                "name": "password",
+                "label": "password",
+                "desc": "password",
+                "type": "string",
+                "size": 8,
+                "offset": 3
+            },
+            {
+                "access": "RW",
+                "name": "function_switch",
+                "label": "function switch",
+                "desc": "function switch",
+                "type": "enum16",
+                "size": 1,
+                "offset": 11,
+                "symbols": [
+                    {
+                        "name": "OFF",
+                        "value": 0
+                    },
+                    {
+                        "name": "ON",
+                        "value": 1
+                    }
+                ]
+            },
+            {
+                "access": "RW",
+                "name": "desired_mode",
+                "label": "desired mode",
+                "desc": "desired mode",
+                "type": "enum16",
+                "size": 1,
+                "offset": 12,
+                "symbols": [
+                    {
+                        "name": "STAND_BY_MODE",
+                        "value": 0
+                    },
+                    {
+                        "name": "RUN_MODE",
+                        "value": 1
+                    },
+                    {
+                        "name": "CHARGE_DISABLED_MODE",
+                        "value": 2
+                    },
+                    {
+                        "name": "CHARGE_DC_DC_MODE",
+                        "value": 3
+                    },
+                    {
+                        "name": "DISCHARGE_DISABLED_MODE",
+                        "value": 4
+                    },
+                    {
+                        "name": "EMERGENCY_MODE",
+                        "value": 5
+                    },
+                    {
+                        "name": "NULL_MODE",
+                        "value": 6
+                    }
+                ]
+            },
+            {
+                "access": "RW",
+                "name": "aux_type",
+                "label": "aux_type",
+                "desc": "aux_type",
+                "type": "enum16",
+                "size": 1,
+                "offset": 13,
+                "symbols": [
+                    {
+                        "name": "None",
+                        "value": 0
+                    },
+                    {
+                        "name": "Heater",
+                        "value": 1
+                    },
+                    {
+                        "name": "Lock",
+                        "value": 2
+                    }
+                ]
+            },
+            {
+                "access": "RW",
+                "name": "aux_switch",
+                "label": "aux_switch",
+                "desc": "aux_switch",
+                "type": "enum16",
+                "size": 1,
+                "offset": 14,
+                "symbols": [
+                    {
+                        "name": "OFF",
+                        "value": 0
+                    },
+                    {
+                        "name": "ON",
+                        "value": 1
+                    }
+                ]
+            },
+            {
+                "access": "RW",
+                "name": "bat_rail_hys",
+                "label": "bat_rail_hys",
+                "desc": "bat_rail_hys",
+                "type": "uint32",
+                "units": "mV",
+                "size": 2,
+                "offset": 15
+            },
+            {
+                "access": "RW",
+                "name": "rail_bat_hys",
+                "label": "rail_bat_hys",
+                "desc": "rail_bat_hys",
+                "type": "uint32",
+                "units": "mV",
+                "size": 2,
+                "offset": 17
+            },
+            {
+                "access": "RW",
+                "name": "cutc_hys",
+                "label": "cutc_hys",
+                "desc": "cutc_hys",
+                "type": "uint32",
+                "units": "0.1℃",
+                "size": 2,
+                "offset": 19
+            },
+            {
+                "access": "RW",
+                "name": "cotc_hys",
+                "label": "cotc_hys",
+                "desc": "cotc_hys",
+                "type": "uint32",
+                "units": "0.1℃",
+                "size": 2,
+                "offset": 21
+            },
+            {
+                "access": "RW",
+                "name": "cutd_hys",
+                "label": "cutd_hys",
+                "desc": "cutd_hys",
+                "type": "uint32",
+                "units": "0.1℃",
+                "size": 2,
+                "offset": 23
+            },
+            {
+                "access": "RW",
+                "name": "cotd_hys",
+                "label": "cotd_hys",
+                "desc": "cotd_hys",
+                "type": "uint32",
+                "units": "0.1℃",
+                "size": 2,
+                "offset": 25
+            },
+            {
+                "access": "RW",
+                "name": "cov_hys",
+                "label": "cov_hys",
+                "desc": "cov_hys",
+                "type": "uint32",
+                "units": "mV",
+                "size": 2,
+                "offset": 27
+            },
+            {
+                "access": "RW",
+                "name": "cov_cur",
+                "label": "cov_cur",
+                "desc": "cov_cur",
+                "type": "int32",
+                "units": "mA",
+                "size": 2,
+                "offset": 29
+            },
+            {
+                "access": "RW",
+                "name": "wifi_access_time",
+                "label": "wifi_access_time",
+                "desc": "wifi_access_time",
+                "type": "uint32",
+                "units": "ms",
+                "size": 2,
+                "offset": 31
+            },
+            {
+                "access": "RW",
+                "name": "mot_hys",
+                "label": "mot_hys",
+                "desc": "mot_hys",
+                "type": "uint32",
+                "units": "0.1℃",
+                "size": 2,
+                "offset": 33
+            },
+            {
+                "access": "RW",
+                "name": "dcdc_ot_hys",
+                "label": "dcdc_ot_hys",
+                "desc": "dcdc_ot_hys",
+                "type": "uint32",
+                "units": "0.1℃",
+                "size": 2,
+                "offset": 35
+            },
+            {
+                "access": "RW",
+                "name": "dcdc_cc_counter_limit",
+                "label": "dcdc_cc_counter_limit",
+                "desc": "dcdc_cc_counter_limit",
+                "type": "uint16",
+                "size": 1,
+                "offset": 37
+            },
+            {
+                "access": "RW",
+                "name": "tbat_int_limit",
+                "label": "tbat_int_limit",
+                "desc": "tbat_int_limit",
+                "type": "uint32",
+                "units": "0.1℃",
+                "size": 2,
+                "offset": 38
+            },
+            {
+                "access": "RW",
+                "name": "tpol_limit",
+                "label": "tpol_limit",
+                "desc": "tpol_limit",
+                "type": "uint32",
+                "units": "0.1℃",
+                "size": 2,
+                "offset": 40
+            },
+            {
+                "access": "RW",
+                "name": "tbat_int_hys",
+                "label": "tbat_int_hys",
+                "desc": "tbat_int_hys",
+                "type": "uint32",
+                "units": "0.1℃",
+                "size": 2,
+                "offset": 42
+            },
+            {
+                "access": "RW",
+                "name": "tpol_hys",
+                "label": "tpol_hys",
+                "desc": "tpol_hys",
+                "type": "uint32",   
+                "units": "0.1℃",
+                "size": 2,
+                "offset": 44
+            },
+            {
+                "access": "RW",
+                "name": "cuvc_timer",
+                "label": "cuvc_timer",
+                "desc": "cuvc_timer",
+                "type": "uint32",
+                "units": "ms",
+                "size": 2,
+                "offset": 46
+            },
+            {
+                "access": "RW",
+                "name": "bvp_timer",
+                "label": "bvp_timer",
+                "desc": "bvp_timer",
+                "type": "uint32",
+                "units": "ms",
+                "size": 2,
+                "offset": 48
+            },
+            {
+                "access": "RW",
+                "name": "cmc_timer",
+                "label": "cmc_timer",
+                "desc": "cmc_timer",
+                "type": "uint32",
+                "units": "ms",
+                "size": 2,
+                "offset": 50
+            },
+            {
+                "access": "RW",
+                "name": "ctd_timer",
+                "label": "ctd_timer",
+                "desc": "ctd_timer",
+                "type": "uint32",
+                "units": "ms",
+                "size": 2,
+                "offset": 52
+            },
+            {
+                "access": "RW",
+                "name": "top_up_timer",
+                "label": "top_up_timer",
+                "desc": "top_up_timer",
+                "type": "uint32",
+                "units": "ms",
+                "size": 2,
+                "offset": 54
+            },
+            {
+                "access": "RW",
+                "name": "occ_recovery_timer",
+                "label": "occ_recovery_timer",
+                "desc": "occ_recovery_timer",
+                "type": "uint32",
+                "units": "ms",
+                "size": 2,
+                "offset": 56
+            },
+            {
+                "access": "RW",
+                "name": "soft_start_timer",
+                "label": "soft_start_timer",
+                "desc": "soft_start_timer",
+                "type": "uint32",
+                "units": "ms",
+                "size": 2,
+                "offset": 58
+            },
+            {
+                "access": "RW",
+                "name": "theft_alarm_timer",
+                "label": "theft_alarm_timer",
+                "desc": "theft_alarm_timer",
+                "type": "uint32",
+                "units": "ms",
+                "size": 2,
+                "offset": 60
+            },
+            {
+                "access": "RW",
+                "name": "battery_id",
+                "label": "battery_id",
+                "desc": "battery_id",
+                "type": "uint16",
+                "size": 1,
+                "offset": 62
+            },
+            {
+                "access": "RW",
+                "name": "cot_warning_threshold",
+                "label": "cot_warning_threshold",
+                "desc": "cot_warning_threshold",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 63
+            },
+            {
+                "access": "RW",
+                "name": "cut_warning_threshold",
+                "label": "cut_warning_threshold",
+                "desc": "cut_warning_threshold",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 64
+            },
+            {
+                "access": "RW",
+                "name": "occ_warning_threshold",
+                "label": "occ_warning_threshold",
+                "desc": "occ_warning_threshold",
+                "type": "int16",
+                "units": "mA",
+                "size": 1,
+                "offset": 65
+            },
+            {
+                "access": "RW",
+                "name": "ocd_warning_threshold",
+                "label": "ocd_warning_threshold",
+                "desc": "ocd_warning_threshold",
+                "type": "int16",
+                "units": "mA",
+                "size": 1,
+                "offset": 66
+            },
+            {
+                "access": "RW",
+                "name": "cov_warning_threshold",
+                "label": "cov_warning_threshold",
+                "desc": "cov_warning_threshold",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 67
+            },
+            {
+                "access": "RW",
+                "name": "cuv_warning_threshold",
+                "label": "cuv_warning_threshold",
+                "desc": "cuv_warning_threshold",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 68
+            },
+            {
+                "access": "RW",
+                "name": "cvi_warning_threshold",
+                "label": "cvi_warning_threshold",
+                "desc": "cvi_warning_threshold",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 69
+            },
+            {
+                "access": "RW",
+                "name": "soc_max_warning_threshold",
+                "label": "soc_max_warning_threshold",
+                "desc": "soc_max_warning_threshold",
+                "type": "int16",
+                "units": "%",
+                "size": 1,
+                "offset": 70
+            },
+            {
+                "access": "RW",
+                "name": "soc_min_warning_threshold",
+                "label": "soc_min_warning_threshold",
+                "desc": "soc_min_warning_threshold",
+                "type": "int16",
+                "units": "%",
+                "size": 1,
+                "offset": 71
+            },
+            {
+                "access": "RW",
+                "name": "ctd_warning_threshold",
+                "label": "ctd_warning_threshold",
+                "desc": "ctd_warning_threshold",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 72
+            },  
+            {
+                "name": "anti_theft_mode",
+                "label": "anti_theft_mode",
+                "desc": "anti_theft_mode",
+                "type": "enum16",
+                "size": 1,
+                "offset": 73,
+                "symbols": [
+                    {
+                        "name": "OFF",
+                        "value": 0
+                    },
+                    {
+                        "name": "ON",
+                        "value": 1
+                    }
+                ]
+            }, 
+            {
+                "name": "self_destruct_mode",
+                "label": "self_destruct_mode",
+                "desc": "self_destruct_mode",
+                "type": "enum16",
+                "size": 1,
+                "offset": 74,
+                "symbols": [
+                    {
+                        "name": "OFF",
+                        "value": 0
+                    },
+                    {
+                        "name": "ON",
+                        "value": 1
+                    }
+                ]
+            }, 
+            {
+                "access": "RW",
+                "name": "max_cycle_time",
+                "label": "max_cycle_time",
+                "desc": "max_cycle_time",
+                "type": "uint16",
+                "size": 1,
+                "offset": 75
+            }, 
+            {
+                "access": "RW",
+                "name": "current_capacity",
+                "label": "current_capacity",
+                "desc": "current_capacity",
+                "type": "int32",
+                "size": 2,
+                "units": "mAh",
+                "offset": 76
+            },  
+            {
+                "access": "RW",
+                "name": "current_charge",
+                "label": "current_charge",
+                "desc": "current_charge",
+                "type": "int32",
+                "size": 2,
+                "units": "mAh",
+                "offset": 78
+            },
+            {
+                "access": "RW",
+                "name": "sum_of_discharge",
+                "label": "sum_of_discharge",
+                "desc": "sum_of_discharge",
+                "type": "int32",
+                "size": 2,
+                "units": "mAh",
+                "offset": 80
+            },         
+            {
+                "access": "RW",
+                "name": "dch_soc_ocv_table",
+                "label": "dch_soc_ocv_table",
+                "desc": "dch_soc_ocv_table",
+                "type": "int16 array",
+                "size": 11,
+                "units": "mV",
+                "offset": 82
+            },
+            {
+                "access": "RW",
+                "name": "chg_soc_ocv_table",
+                "label": "chg_soc_ocv_table",
+                "desc": "chg_soc_ocv_table",
+                "type": "int16 array",
+                "size": 11,
+                "units": "mV",
+                "offset": 93
+            },
+            {
+                "access": "RW",
+                "name": "soc_ocv_low_limit",
+                "label": "soc_ocv_low_limit",
+                "desc": "soc_ocv_low_limit",
+                "type": "int16",
+                "size": 1,
+                "units": "%",
+                "offset": 104
+            },
+            {
+                "access": "RW",
+                "name": "soc_ocv_up_limit",
+                "label": "soc_ocv_up_limit",
+                "desc": "soc_ocv_up_limit",
+                "type": "int16",
+                "size": 1,
+                "units": "%",
+                "offset": 105
+            },
+            
+            {
+                "access": "RW",
+                "name": "charge_capacity",
+                "label": "charge_capacity",
+                "desc": "charge_capacity",
+                "type": "int32",
+                "size": 2,
+                "units": "mAh",
+                "offset": 106
+            },  
+            {
+                "access": "RW",
+                "name": "energy_capacity",
+                "label": "energy_capacity",
+                "desc": "energy_capacity",
+                "type": "uint16",
+                "size": 1,
+                "units": "Wh",
+                "offset": 108
+            },
+            {
+                "access": "RW",
+                "name": "max_charge_rate",
+                "label": "max_charge_rate",
+                "desc": "max_charge_rate",
+                "type": "uint16",
+                "size": 1,
+                "units": "W",
+                "offset": 109
+            },
+            {
+                "access": "RW",
+                "name": "max_discharge_rate",
+                "label": "max_discharge_rate",
+                "desc": "max_discharge_rate",
+                "type": "uint16",
+                "size": 1,
+                "units": "W",
+                "offset": 110
+            },
+            {
+                "access": "RW",
+                "name": "self_discharge_rate",
+                "label": "self_discharge_rate",
+                "desc": "self_discharge_rate",
+                "type": "uint16",
+                "size": 1,
+                "units": "W",
+                "offset": 111
+            },
+            {
+                "access": "RW",
+                "name": "max_soc",
+                "label": "max_soc",
+                "desc": "max_soc",
+                "type": "uint16",
+                "size": 1,
+                "units": "%",
+                "offset": 112
+            },
+            {
+                "access": "RW",
+                "name": "min_soc",
+                "label": "min_soc",
+                "desc": "min_soc",
+                "type": "uint16",
+                "size": 1,
+                "units": "%",
+                "offset": 113
+            },
+            {
+                "access": "RW",
+                "name": "battery_type",
+                "label": "battery_type",
+                "desc": "battery_type",
+                "type": "enum16",
+                "size": 1,
+                "offset": 114,
+                "symbols": [
+                    {
+                        "name": "NOT APPLICABLE_UNKNOWN",
+                        "value": 0
+                    },
+                    {
+                        "name": "LEAD_ACID",
+                        "value": 1
+                    },
+                    {
+                        "name": "NICKEL_METAL_HYDRATE",
+                        "value": 2
+                    },
+                    {
+                        "name": "NICKEL_CADMIUM",
+                        "value": 3
+                    },
+                    {
+                        "name": "LITHIUM_ION",
+                        "value": 4
+                    },
+                    {
+                        "name": "CARBON_ZINC",
+                        "value": 5
+                    },
+                    {
+                        "name": "ZINC_CHLORIDE",
+                        "value": 6
+                    },
+                    {
+                        "name": "ALKALINE",
+                        "value": 7
+                    },
+                    {
+                        "name": "RECHARGEABLE_ALKALINE",
+                        "value": 8
+                    },
+                    {
+                        "name": "SODIUM_SULFUR",
+                        "value": 9
+                    },
+                    {
+                        "name": "FLOW",
+                        "value": 10
+                    },
+                    {
+                        "name": "OTHER",
+                        "value": 99
+                    }
+                ]
+            },
+            {
+                "access": "RW",
+                "name": "product_manufactor",
+                "label": "product_manufactor",
+                "desc": "product_manufactor",
+                "type": "string",
+                "size": 16,
+                "offset": 115
+            },
+            {
+                "access": "RW",
+                "name": "product_model",
+                "label": "product_model",
+                "desc": "product_model",
+                "type": "string",
+                "size": 16,
+                "offset": 131
+            },
+            {
+                "access": "RW",
+                "name": "product_options",
+                "label": "product_options",
+                "desc": "product_options",
+                "type": "string",
+                "size": 8,
+                "offset": 147
+            },
+            {
+                "access": "RW",
+                "name": "product_version",
+                "label": "product_version",
+                "desc": "product_version",
+                "type": "string",
+                "size": 8,
+                "offset": 155
+            },
+            {
+                "access": "RW",
+                "name": "product_sn",
+                "label": "product_sn",
+                "desc": "product_sn",
+                "type": "string",
+                "size": 16,
+                "offset": 163
+            },
+            {
+                "access": "RW",
+                "name": "warranty_date",
+                "label": "warranty_date",
+                "desc": "warranty_date",
+                "type": "uint32",
+                "size": 2,
+                "offset": 179
+            },
+            {
+                "access": "RW",
+                "name": "production_date",
+                "label": "production_date",
+                "desc": "production_date",
+                "type": "uint32",
+                "size": 2,
+                "offset": 181
+            },
+            {
+                "access": "RW",
+                "name": "installation_date",
+                "label": "installation_date",
+                "desc": "installation_date",
+                "type": "uint32",
+                "size": 2,
+                "offset": 183
+            },
+            {
+                "access": "RW",
+                "name": "customer_sn",
+                "label": "customer_sn",
+                "desc": "customer_sn",
+                "type": "string",
+                "size": 24,
+                "offset": 185
+            },
+            {
+                "access": "RW",
+                "name": "customer_product_name",
+                "label": "customer_product_name",
+                "desc": "customer_product_name",
+                "type": "string",
+                "size": 24,
+                "offset": 209
+            }
+        ],
+        "type": "group"
+    },
+    "id": 64952
+} 

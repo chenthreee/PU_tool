@@ -1,0 +1,87 @@
+{
+    "group": {
+        "label": "Model 1",
+        "name": "pu_Custom",
+        "points": [
+            {
+                "name": "ID",
+                "label": "Model ID",
+                "desc": "Model identifier",
+                "type": "uint16",
+                "size": 1,
+                "static": "S",
+                "mandatory": "M",
+                "offset": 0
+            },
+            {
+                "name": "L",
+                "label": "Model Length",
+                "desc": "Model length",
+                "type": "uint16",
+                "size": 1,
+                "static": "S",
+                "mandatory": "M",
+                "offset": 1
+            },
+            {
+                "name": "Mn",
+                "label": "Manufacturer",
+                "desc": "Well known value registered with SunSpec for compliance",
+                "type": "string",
+                "size": 16,
+                "offset": 2
+            },
+            {
+                "name": "Md",
+                "label": "Model",
+                "desc": "Manufacturer specific value (32 chars)",
+                "type": "string",
+                "size": 16,
+                "offset": 18
+            },
+            {
+                "name": "Opt",
+                "label": "Options",
+                "desc": "Manufacturer specific value (16 chars)",
+                "type": "string",
+                "size": 8,
+                "offset": 34
+            },
+            {
+                "name": "Vr",
+                "label": "Version",
+                "desc": "Manufacturer specific value (16 chars)",
+                "type": "string",
+                "size": 8,
+                "offset": 42
+            },
+            {
+                "name": "SN",
+                "label": "Serial Number",
+                "desc": "Manufacturer specific value (32 chars)",
+                "type": "string",
+                "size": 16,
+                "offset": 50
+            },
+            {
+                "access": "RW",
+                "name": "DA",
+                "label": "Device Address",
+                "desc": "Modbus device address",
+                "type": "uint16",
+                "size": 1,
+                "offset": 66
+            },
+            {
+                "name": "Pad",
+                "label": "pad",
+                "desc": "Force even alignment",
+                "type": "uint16",
+                "size": 1,
+                "offset": 67
+            }
+        ],
+        "type": "group"
+    },
+    "id": 1
+} 

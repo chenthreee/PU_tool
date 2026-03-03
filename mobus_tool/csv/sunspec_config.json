@@ -1,0 +1,556 @@
+{
+  "tables": {
+    "802": {
+      "name": "Battery Base Model",
+      "description": "SunSpec 802 Battery Model",
+      "base_address": 40000,
+      "fields": {
+        "ID": {
+          "offset": 0,
+          "type": "uint16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Model ID",
+          "description": "Model identifier"
+        },
+        "L": {
+          "offset": 1,
+          "type": "uint16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Model Length",
+          "description": "Model length"
+        },
+        "AHRtg": {
+          "offset": 2,
+          "type": "uint16",
+          "scale": "AHRtg_SF",
+          "unit": "Ah",
+          "access": "r",
+          "label": "Nameplate Charge Capacity",
+          "description": "Nameplate charge capacity in amp-hours."
+        },
+        "WHRtg": {
+          "offset": 3,
+          "type": "uint16",
+          "scale": "WHRtg_SF",
+          "unit": "Wh",
+          "access": "r",
+          "label": "Nameplate Energy Capacity",
+          "description": "Nameplate energy capacity in DC watt-hours."
+        },
+        "CtrlHb": {
+          "offset": 19,
+          "type": "uint16",
+          "scale": 1,
+          "unit": "",
+          "access": "rw",
+          "label": "Controller Heartbeat",
+          "description": "Value is incremented every second with periodic resets to zero."
+        }
+      }
+    },
+    "805": {
+      "name": "SunSpec 805 Battery Model",
+      "description": "SunSpec 805 Battery Model",
+      "base_address": 40100,
+      "fields": {
+        "ID": {
+          "offset": 0,
+          "type": "uint16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Model ID",
+          "description": "Model identifier"
+        },
+        "L": {
+          "offset": 1,
+          "type": "uint16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Model Length",
+          "description": "Model length"
+        },
+        "WMaxLimPct_RmpUpRte": {
+          "offset": 2,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Maximum Power Limit Rise Rate",
+          "description": "Maximum power limit rise rate."
+        },
+        "WMaxLimPct_RmpDnRte": {
+          "offset": 3,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Maximum Power Limit Fall Rate",
+          "description": "Maximum power limit fall rate."
+        },
+        "WMaxLimPct_SF": {
+          "offset": 4,
+          "type": "int16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Maximum Power Limit Scale Factor",
+          "description": "Maximum power limit scale factor."
+        },
+        "OutPFSet_RmpUpRte": {
+          "offset": 5,
+          "type": "uint16",
+          "scale": 0.001,
+          "unit": "PF/Sec",
+          "access": "rw",
+          "label": "Output Power Factor Rise Rate",
+          "description": "Output power factor rise rate."
+        },
+        "OutPFSet_RmpDnRte": {
+          "offset": 6,
+          "type": "uint16",
+          "scale": 0.001,
+          "unit": "PF/Sec",
+          "access": "rw",
+          "label": "Output Power Factor Fall Rate",
+          "description": "Output power factor fall rate."
+        },
+        "OutPFSet_SF": {
+          "offset": 7,
+          "type": "int16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Output Power Factor Scale Factor",
+          "description": "Output power factor scale factor."
+        },
+        "VArMaxPct_RmpUpRte": {
+          "offset": 8,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Maximum Reactive Power Rise Rate",
+          "description": "Maximum reactive power rise rate."
+        },
+        "VArMaxPct_RmpDnRte": {
+          "offset": 9,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Maximum Reactive Power Fall Rate",
+          "description": "Maximum reactive power fall rate."
+        },
+        "VArMaxPct_SF": {
+          "offset": 10,
+          "type": "int16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Maximum Reactive Power Scale Factor",
+          "description": "Maximum reactive power scale factor."
+        },
+        "VArAvalPct_RmpUpRte": {
+          "offset": 11,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Available Reactive Power Rise Rate",
+          "description": "Available reactive power rise rate."
+        },
+        "VArAvalPct_RmpDnRte": {
+          "offset": 12,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Available Reactive Power Fall Rate",
+          "description": "Available reactive power fall rate."
+        },
+        "VArAvalPct_SF": {
+          "offset": 13,
+          "type": "int16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Available Reactive Power Scale Factor",
+          "description": "Available reactive power scale factor."
+        },
+        "WGra_RmpUpRte": {
+          "offset": 14,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Power Gradient Rise Rate",
+          "description": "Power gradient rise rate."
+        },
+        "WGra_RmpDnRte": {
+          "offset": 15,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Power Gradient Fall Rate",
+          "description": "Power gradient fall rate."
+        },
+        "WGra_SF": {
+          "offset": 16,
+          "type": "int16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Power Gradient Scale Factor",
+          "description": "Power gradient scale factor."
+        },
+        "PFMin_RmpUpRte": {
+          "offset": 17,
+          "type": "uint16",
+          "scale": 0.001,
+          "unit": "PF/Sec",
+          "access": "rw",
+          "label": "Minimum Power Factor Rise Rate",
+          "description": "Minimum power factor rise rate."
+        },
+        "PFMin_RmpDnRte": {
+          "offset": 18,
+          "type": "uint16",
+          "scale": 0.001,
+          "unit": "PF/Sec",
+          "access": "rw",
+          "label": "Minimum Power Factor Fall Rate",
+          "description": "Minimum power factor fall rate."
+        },
+        "PFMin_SF": {
+          "offset": 19,
+          "type": "int16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Minimum Power Factor Scale Factor",
+          "description": "Minimum power factor scale factor."
+        },
+        "PFMax_RmpUpRte": {
+          "offset": 20,
+          "type": "uint16",
+          "scale": 0.001,
+          "unit": "PF/Sec",
+          "access": "rw",
+          "label": "Maximum Power Factor Rise Rate",
+          "description": "Maximum power factor rise rate."
+        },
+        "PFMax_RmpDnRte": {
+          "offset": 21,
+          "type": "uint16",
+          "scale": 0.001,
+          "unit": "PF/Sec",
+          "access": "rw",
+          "label": "Maximum Power Factor Fall Rate",
+          "description": "Maximum power factor fall rate."
+        },
+        "PFMax_SF": {
+          "offset": 22,
+          "type": "int16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Maximum Power Factor Scale Factor",
+          "description": "Maximum power factor scale factor."
+        },
+        "VArGra_RmpUpRte": {
+          "offset": 23,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Reactive Power Gradient Rise Rate",
+          "description": "Reactive power gradient rise rate."
+        },
+        "VArGra_RmpDnRte": {
+          "offset": 24,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Reactive Power Gradient Fall Rate",
+          "description": "Reactive power gradient fall rate."
+        },
+        "VArGra_SF": {
+          "offset": 25,
+          "type": "int16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Reactive Power Gradient Scale Factor",
+          "description": "Reactive power gradient scale factor."
+        },
+        "Pad": {
+          "offset": 26,
+          "type": "uint16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Padding",
+          "description": "Padding"
+        }
+      }
+    },
+    "899": {
+      "name": "SunSpec 899 Battery Model",
+      "description": "SunSpec 899 Battery Model",
+      "base_address": 40200,
+      "fields": {
+        "ID": {
+          "offset": 0,
+          "type": "uint16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Model ID",
+          "description": "Model identifier"
+        },
+        "L": {
+          "offset": 1,
+          "type": "uint16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Model Length",
+          "description": "Model length"
+        },
+        "WMaxLimPct_RmpUpRte": {
+          "offset": 2,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Maximum Power Limit Rise Rate",
+          "description": "Maximum power limit rise rate."
+        },
+        "WMaxLimPct_RmpDnRte": {
+          "offset": 3,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Maximum Power Limit Fall Rate",
+          "description": "Maximum power limit fall rate."
+        },
+        "WMaxLimPct_SF": {
+          "offset": 4,
+          "type": "int16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Maximum Power Limit Scale Factor",
+          "description": "Maximum power limit scale factor."
+        },
+        "OutPFSet_RmpUpRte": {
+          "offset": 5,
+          "type": "uint16",
+          "scale": 0.001,
+          "unit": "PF/Sec",
+          "access": "rw",
+          "label": "Output Power Factor Rise Rate",
+          "description": "Output power factor rise rate."
+        },
+        "OutPFSet_RmpDnRte": {
+          "offset": 6,
+          "type": "uint16",
+          "scale": 0.001,
+          "unit": "PF/Sec",
+          "access": "rw",
+          "label": "Output Power Factor Fall Rate",
+          "description": "Output power factor fall rate."
+        },
+        "OutPFSet_SF": {
+          "offset": 7,
+          "type": "int16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Output Power Factor Scale Factor",
+          "description": "Output power factor scale factor."
+        },
+        "VArMaxPct_RmpUpRte": {
+          "offset": 8,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Maximum Reactive Power Rise Rate",
+          "description": "Maximum reactive power rise rate."
+        },
+        "VArMaxPct_RmpDnRte": {
+          "offset": 9,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Maximum Reactive Power Fall Rate",
+          "description": "Maximum reactive power fall rate."
+        },
+        "VArMaxPct_SF": {
+          "offset": 10,
+          "type": "int16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Maximum Reactive Power Scale Factor",
+          "description": "Maximum reactive power scale factor."
+        },
+        "VArAvalPct_RmpUpRte": {
+          "offset": 11,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Available Reactive Power Rise Rate",
+          "description": "Available reactive power rise rate."
+        },
+        "VArAvalPct_RmpDnRte": {
+          "offset": 12,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Available Reactive Power Fall Rate",
+          "description": "Available reactive power fall rate."
+        },
+        "VArAvalPct_SF": {
+          "offset": 13,
+          "type": "int16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Available Reactive Power Scale Factor",
+          "description": "Available reactive power scale factor."
+        },
+        "WGra_RmpUpRte": {
+          "offset": 14,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Power Gradient Rise Rate",
+          "description": "Power gradient rise rate."
+        },
+        "WGra_RmpDnRte": {
+          "offset": 15,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Power Gradient Fall Rate",
+          "description": "Power gradient fall rate."
+        },
+        "WGra_SF": {
+          "offset": 16,
+          "type": "int16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Power Gradient Scale Factor",
+          "description": "Power gradient scale factor."
+        },
+        "PFMin_RmpUpRte": {
+          "offset": 17,
+          "type": "uint16",
+          "scale": 0.001,
+          "unit": "PF/Sec",
+          "access": "rw",
+          "label": "Minimum Power Factor Rise Rate",
+          "description": "Minimum power factor rise rate."
+        },
+        "PFMin_RmpDnRte": {
+          "offset": 18,
+          "type": "uint16",
+          "scale": 0.001,
+          "unit": "PF/Sec",
+          "access": "rw",
+          "label": "Minimum Power Factor Fall Rate",
+          "description": "Minimum power factor fall rate."
+        },
+        "PFMin_SF": {
+          "offset": 19,
+          "type": "int16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Minimum Power Factor Scale Factor",
+          "description": "Minimum power factor scale factor."
+        },
+        "PFMax_RmpUpRte": {
+          "offset": 20,
+          "type": "uint16",
+          "scale": 0.001,
+          "unit": "PF/Sec",
+          "access": "rw",
+          "label": "Maximum Power Factor Rise Rate",
+          "description": "Maximum power factor rise rate."
+        },
+        "PFMax_RmpDnRte": {
+          "offset": 21,
+          "type": "uint16",
+          "scale": 0.001,
+          "unit": "PF/Sec",
+          "access": "rw",
+          "label": "Maximum Power Factor Fall Rate",
+          "description": "Maximum power factor fall rate."
+        },
+        "PFMax_SF": {
+          "offset": 22,
+          "type": "int16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Maximum Power Factor Scale Factor",
+          "description": "Maximum power factor scale factor."
+        },
+        "VArGra_RmpUpRte": {
+          "offset": 23,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Reactive Power Gradient Rise Rate",
+          "description": "Reactive power gradient rise rate."
+        },
+        "VArGra_RmpDnRte": {
+          "offset": 24,
+          "type": "uint16",
+          "scale": 0.01,
+          "unit": "%/Sec",
+          "access": "rw",
+          "label": "Reactive Power Gradient Fall Rate",
+          "description": "Reactive power gradient fall rate."
+        },
+        "VArGra_SF": {
+          "offset": 25,
+          "type": "int16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Reactive Power Gradient Scale Factor",
+          "description": "Reactive power gradient scale factor."
+        },
+        "Pad": {
+          "offset": 26,
+          "type": "uint16",
+          "scale": 1,
+          "unit": "",
+          "access": "r",
+          "label": "Padding",
+          "description": "Padding"
+        }
+      }
+    }
+  }
+}

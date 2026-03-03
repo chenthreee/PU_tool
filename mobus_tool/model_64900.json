@@ -1,0 +1,300 @@
+{
+    "group": {
+        "label": "Battery Base Model 64900",
+        "name": "battery",
+        "points": [
+            {
+                "name": "ID",
+                "label": "Model ID",
+                "desc": "Model identifier",
+                "type": "uint16",
+                "size": 1,
+                "static": "S",
+                "mandatory": "M",
+                "offset": 0
+            },
+            {
+                "name": "L",
+                "label": "Model Length",
+                "desc": "Model length",
+                "type": "uint16",
+                "size": 1,
+                "static": "S",
+                "mandatory": "M",
+                "offset": 1
+            },
+            {
+                "name": "Spec64900ProtocolVersion",
+                "label": "Spec 64900 protocol version",
+                "desc": "Spec 64900 protocol version",
+                "type": "uint16",
+                "size": 1,
+                "offset": 2
+            },
+            {
+                "name": "FETTemperatures",
+                "label": "FET temperatures",
+                "desc": "FET temperatures",
+                "type": "int16",
+                "size": 1,
+                "units": "0.1℃",
+                "offset": 3
+            },
+            {
+                "name": "AFEDieTemperature",
+                "label": "AFE die temperature",
+                "desc": "AFE die temperature",
+                "type": "int16",
+                "size": 1,
+                "units": "0.1℃",
+                "offset": 4
+            },
+            {
+                "name": "MCUDieTemperature",
+                "label": "MCU die temperature",
+                "desc": "MCU die temperature",
+                "type": "int16",
+                "size": 1,
+                "units": "0.1℃",
+                "offset": 5
+            },
+            {
+                "name": "DCDCTemperature",
+                "label": "DCDC temperature",
+                "desc": "DCDC temperature",
+                "type": "int16",
+                "size": 1,
+                "units": "0.1℃",
+                "offset": 6
+            },
+            {
+                "name": "NegBatTemp1",
+                "label": "Neg bat temp 1",
+                "desc": "Neg bat temp 1",
+                "type": "int16",
+                "size": 1,
+                "units": "0.1℃",
+                "offset": 7
+            },
+            {
+                "name": "NegBatTemp2",
+                "label": "Neg bat temp 2",
+                "desc": "Neg bat temp 2",
+                "type": "int16",
+                "size": 1,
+                "units": "0.1℃",
+                "offset": 8
+            },
+            {
+                "name": "PosBatTemp1CB",
+                "label": "Pos bat temp 1 (CB)",
+                "desc": "Pos bat temp 1 (CB)",
+                "type": "int16",
+                "size": 1,
+                "units": "0.1℃",
+                "offset": 9
+            },
+            {
+                "name": "PosTerminalTemp",
+                "label": "Pos terminal temp",
+                "desc": "Pos terminal temp",
+                "type": "int16",
+                "size": 1,
+                "units": "0.1℃",
+                "offset": 10
+            },
+            {
+                "name": "NegativeTerminalTemp",
+                "label": "Negative terminal temp",
+                "desc": "Negative terminal temp",
+                "type": "int16",
+                "size": 1,
+                "units": "0.1℃",
+                "offset": 11
+            },
+            {
+                "name": "MACAddressESP32",
+                "label": "MAC address of ESP32",
+                "desc": "MAC address of ESP32",
+                "type": "hex",
+                "size": 3,
+                "offset": 12
+            },
+            {
+                "name": "Lifetime",
+                "label": "Life time",
+                "desc": "Life time",
+                "type": "uint32",
+                "size": 2,
+                "units": "h",
+                "offset": 15
+            },
+            {
+                "name": "SVRAccelerometerX",
+                "label": "SVR Accelerometer X axis",
+                "desc": "SVR Accelerometer X axis",
+                "type": "int16",
+                "size": 1,
+                "units": "milli-g",
+                "offset": 17
+            },
+            {
+                "name": "SVRAccelerometerY",
+                "label": "SVR Accelerometer Y axis",
+                "desc": "SVR Accelerometer Y axis",
+                "type": "int16",
+                "size": 1,
+                "units": "milli-g",
+                "offset": 18
+            },
+            {
+                "name": "SVRAccelerometerZ",
+                "label": "SVR Accelerometer Z axis",
+                "desc": "SVR Accelerometer Z axis",
+                "type": "int16",
+                "size": 1,
+                "units": "milli-g",
+                "offset": 19
+            },
+            {
+                "name": "Production date",
+                "label": "Production date",
+                "desc": "Production date",
+                "type": "uint32",
+                "size": 2,
+                "offset": 20
+            },
+            {
+                "name": "InstallationDate",
+                "label": "Installation date",
+                "desc": "Installation date",
+                "type": "uint32",
+                "size": 2,
+                "offset": 22
+            },
+            {
+                "name": "Customer serial number",
+                "label": "Customer serial number",
+                "desc": "Customer serial number",
+                "type": "string",
+                "size": 24,
+                "offset": 24
+            },
+            {
+                "name": "Customer product name",
+                "label": "Customer product name",
+                "desc": "Customer product name",
+                "type": "string",
+                "size": 24,
+                "offset": 48
+            },
+            {
+                "name": "Alarms",
+                "label": "Alarms",
+                "desc": "Alarms and warnings. Bit flags.",
+                "type": "bitfield32",
+                "size": 2,
+                "offset": 72,
+                "symbols": [
+                    {
+                        "name": "COTC",
+                        "value": 0
+                    },
+                    {
+                        "name": "COTD",
+                        "value": 1
+                    },
+                    {
+                        "name": "CUTC",
+                        "value": 2
+                    },
+                    {
+                        "name": "CUTD",
+                        "value": 3
+                    },
+                    {
+                        "name": "System Lock",
+                        "value": 4
+                    },
+                    {
+                        "name": "SCD",
+                        "value": 5
+                    },
+                    {
+                        "name": "MOT",
+                        "value": 6
+                    },
+                    {
+                        "name": "DCDC_OT",
+                        "value": 7
+                    },
+                    {
+                        "name": "CMC",
+                        "value": 8
+                    },
+                    {
+                        "name": "BVP",
+                        "value": 9
+                    },
+                    {
+                        "name": "CTD",
+                        "value": 10
+                    },
+                    {
+                        "name": "MCB_TRIP",
+                        "value": 11
+                    },
+                    {
+                        "name": "UCM",
+                        "value": 12
+                    },
+                    {
+                        "name": "External Watchdog",
+                        "value": 13
+                    },
+                    {
+                        "name": "Reserved",
+                        "value": 14
+                    },
+                    {
+                        "name": "CUVC",
+                        "value": 15
+                    },
+                    {
+                        "name": "CUV",
+                        "value": 16
+                    },
+                    {
+                        "name": "COV",
+                        "value": 17
+                    },
+                    {
+                        "name": "OCC",
+                        "value": 18
+                    },
+                    {
+                        "name": "OCD",
+                        "value": 19
+                    },
+                    {
+                        "name": "DCDC_CC",
+                        "value": 20
+                    },
+                    {
+
+                        "name": "int_con_ot",
+                        "value": 21
+                    },
+                    {
+                        
+                        "name": "ext_con_ot",
+                        "value": 22
+                    }
+                        
+                ]
+            }
+        ],
+        "type": "group"
+    },
+    "id": 64900
+} 

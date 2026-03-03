@@ -1,0 +1,776 @@
+{
+    "group": {
+        "label": "Model 64950",
+        "name": "pu_Custom",
+        "points": [
+            {
+                "name": "ID",
+                "label": "Model ID",
+                "desc": "Model identifier",
+                "type": "uint16",
+                "size": 1,
+                "static": "S",
+                "mandatory": "M",
+                "offset": 0
+            },
+            {
+                "name": "L",
+                "label": "Model Length",
+                "desc": "Model length",
+                "type": "uint16",
+                "size": 1,
+                "static": "S",
+                "mandatory": "M",
+                "offset": 1
+            },
+            {
+                "name": "model_64950_version",
+                "label": "model_64950_version",
+                "desc": "model_64950_version",
+                "type": "uint16",
+                "size": 1,
+                "offset": 2
+            },
+            {
+                "name": "ESP model",
+                "label": "ESP model",
+                "desc": "ESP model",
+                "type": "string",
+                "size": 16,
+                "offset": 3
+            },
+            {
+                "name": "ESP SN",
+                "label": "ESP SN",
+                "desc": "ESP SN",
+                "type": "string",
+                "size": 16,
+                "offset": 19
+            },
+            {
+                "name": "ESP specifications",
+                "label": "ESP specifications",
+                "desc": "ESP specifications",
+                "type": "hex",
+                "size": 16,
+                "offset": 35
+            },
+            {
+                "name": "MCU model",
+                "label": "MCU model",
+                "desc": "MCU model",
+                "type": "string",
+                "size": 16,
+                "offset": 51
+            },
+            {
+                "name": "MCU SN",
+                "label": "MCU SN",
+                "desc": "MCU SN",
+                "type": "string",
+                "size": 16,
+                "offset": 67
+            },
+            {
+                "name": "MCU specifications",
+                "label": "MCU specifications",
+                "desc": "MCU specifications",
+                "type": "hex",
+                "size": 16,
+                "offset": 83
+            },
+            {
+                "name": "AFE1 model",
+                "label": "AFE1 model",
+                "desc": "AFE1 model",
+                "type": "string",
+                "size": 16,
+                "offset": 99
+            },
+            {
+                "name": "AFE1 SN",
+                "label": "AFE1 SN",
+                "desc": "AFE1 SN",
+                "type": "string",
+                "size": 16,
+                "offset": 115
+            },
+            {
+                "name": "AFE1 specifications",
+                "label": "AFE1 specifications",
+                "desc": "AFE1 specifications",
+                "type": "hex",
+                "size": 16,
+                "offset": 131
+            },
+            {
+                "name": "AFE2 model",
+                "label": "AFE2 model",
+                "desc": "AFE2 model",
+                "type": "string",
+                "size": 16,
+                "offset": 147
+            },
+            {
+                "name": "AFE2 SN",
+                "label": "AFE2 SN",
+                "desc": "AFE2 SN",
+                "type": "string",
+                "size": 16,
+                "offset": 163
+            },
+            {
+                "name": "AFE2 specifications",
+                "label": "AFE2 specifications",
+                "desc": "AFE2 specifications",
+                "type": "hex",
+                "size": 16,
+                "offset": 179
+            },
+            {
+                "name": "Cell1_voltage",
+                "label": "Cell1_voltage",
+                "desc": "Cell1_voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 195
+            },
+            {
+                "name": "Cell2_voltage",
+                "label": "Cell2_voltage",
+                "desc": "Cell2_voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 196
+            },
+            {
+                "name": "Cell3_voltage",
+                "label": "Cell3_voltage",
+                "desc": "Cell3_voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 197
+            },
+            {
+                "name": "Cell4_voltage",
+                "label": "Cell4_voltage",
+                "desc": "Cell4_voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 198
+            },
+            {
+                "name": "Cell5_voltage",
+                "label": "Cell5_voltage",
+                "desc": "Cell5_voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 199
+            },
+            {
+                "name": "Cell6_voltage",
+                "label": "Cell6_voltage",
+                "desc": "Cell6_voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 200
+            },
+            {
+                "name": "Cell7_voltage",
+                "label": "Cell7_voltage",
+                "desc": "Cell7_voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 201
+            },
+            {
+                "name": "Cell8_voltage",
+                "label": "Cell8_voltage",
+                "desc": "Cell8_voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 202
+            },
+            {
+                "name": "Cell9_voltage",
+                "label": "Cell9_voltage",
+                "desc": "Cell9_voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 203
+            },
+            {
+                "name": "Cell10_voltage",
+                "label": "Cell10_voltage",
+                "desc": "Cell10_voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 204
+            },
+            {
+                "name": "Cell11_voltage",
+                "label": "Cell11_voltage",
+                "desc": "Cell11_voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 205
+            },
+            {
+                "name": "Cell12_voltage",
+                "label": "Cell12_voltage",
+                "desc": "Cell12_voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 206
+            },
+            {
+                "name": "Cell13_voltage",
+                "label": "Cell13_voltage",
+                "desc": "Cell13_voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 207
+            },
+            {
+                "name": "Cell14_voltage",
+                "label": "Cell14_voltage",
+                "desc": "Cell14_voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 208
+            },
+            {
+                "name": "Cell15_voltage",
+                "label": "Cell15_voltage",
+                "desc": "Cell15_voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 209
+            },
+            {
+                "name": "Cell16_voltage",
+                "label": "Cell16_voltage",
+                "desc": "Cell16_voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 210
+            },
+            {
+                "name": "Cell voltage sum",
+                "label": "Cell voltage sum",
+                "desc": "Cell voltage sum",
+                "type": "int32",
+                "units": "mV",
+                "size": 2,
+                "offset": 211
+            },
+            {
+                "name": "Cell avg voltage",
+                "label": "Cell avg voltage",
+                "desc": "Cell avg voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 213
+            },
+            {
+                "name": "Cell max diff voltage",
+                "label": "Cell max diff voltage",
+                "desc": "Cell max diff voltage",
+                "type": "int16",
+                "units": "mV",
+                "size": 1,
+                "offset": 214
+            },
+            {
+                "name": "battery voltage",
+                "label": "battery voltage",
+                "desc": "battery voltage",
+                "type": "int32",
+                "units": "mV",
+                "size": 2,
+                "offset": 215
+            },
+            {
+                "name": "Rail voltage",
+                "label": "Rail voltage",
+                "desc": "Rail voltage",
+                "type": "int32",
+                "units": "mV",
+                "size": 2,
+                "offset": 217
+            },
+            {
+                "name": "Current1",
+                "label": "Current1",
+                "desc": "Current1",
+                "type": "int32",
+                "units": "mA",
+                "size": 2,
+                "offset": 219
+            },
+            {
+                "name": "Current2",
+                "label": "Current2",
+                "desc": "Current2",
+                "type": "int32",
+                "units": "mA",
+                "size": 2,
+                "offset": 221
+            },
+            {
+                "name": "Current avg",
+                "label": "Current avg",
+                "desc": "Current avg",
+                "type": "int32",
+                "units": "mA",
+                "size": 2,
+                "offset": 223
+            },
+            {
+                "name": "Current diff",
+                "label": "Current diff",
+                "desc": "Current diff",
+                "type": "int32",
+                "units": "mA",
+                "size": 2,
+                "offset": 225
+            },
+            {
+                "name": "Current diff percent",
+                "label": "Current diff percent",
+                "desc": "Current diff percent",
+                "type": "uint16",
+                "units": "%",
+                "size": 1,
+                "offset": 227
+            },
+            {
+                "name": "dcdc current diff",
+                "label": "dcdc current diff",
+                "desc": "dcdc current diff",
+                "type": "int32",
+                "units": "mA",
+                "size": 2,
+                "offset": 228
+            },
+            {
+                "name": "current direction",
+                "label": "current direction",
+                "desc": "current direction",
+                "type": "int16",
+                "size": 1,
+                "offset": 230,
+                "symbols": [
+                    {
+                        "name": "NO_CURRENT",
+                        "value": 0
+                    },  
+                    {
+                        "name": "CHARGE_CURRENT",
+                        "value": 1
+                    },
+                    {
+                        "name": "DISCHARGE_CURRENT",
+                        "value": -1
+                    }
+                ]
+            },
+            {
+                "name": "Cell temperature1",
+                "label": "Cell temperature1",
+                "desc": "Cell temperature1",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 231
+            },
+            {
+                "name": "Cell temperature2",
+                "label": "Cell temperature2",
+                "desc": "Cell temperature2",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 232
+            },
+            {
+                "name": "Cell temperature3",
+                "label": "Cell temperature3",
+                "desc": "Cell temperature3",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 233
+            },
+            {
+                "name": "Cell temperature4",
+                "label": "Cell temperature4",
+                "desc": "Cell temperature4",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 234
+            },
+            {
+                "name": "Cell max temperature",
+                "label": "Cell max temperature",
+                "desc": "Cell max temperature",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 235
+            },
+            {
+                "name": "Cell avg temperature",
+                "label": "Cell avg temperature",
+                "desc": "Cell avg temperature",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 236
+            },
+            {
+                "name": "Positive terminal temp",
+                "label": "Positive terminal temp",
+                "desc": "Positive terminal temp",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 237
+            },
+            {
+                "name": "Negative terminal temp",
+                "label": "Negative terminal temp",
+                "desc": "Negative terminal temp",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 238
+            },
+            {
+                "name": "Positive Bat temp",
+                "label": "Positive Bat temp",
+                "desc": "Positive Bat temp",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 239
+            },
+            {
+                "name": "Negative Bat temp1",
+                "label": "Negative Bat temp1",
+                "desc": "Negative Bat temp1",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 240
+            },
+            {
+                "name": "Negative Bat temp2",
+                "label": "Negative Bat temp2",
+                "desc": "Negative Bat temp2",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 241
+            },
+            {
+                "name": "Discharge MOS temp",
+                "label": "Discharge MOS temp",
+                "desc": "Discharge MOS temp",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 242
+            },
+            {
+                "name": "Charge MOS temp",
+                "label": "Charge MOS temp",
+                "desc": "Charge MOS temp",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 243
+            },
+            {
+                "name": "DC/DC temperature",
+                "label": "DC/DC temperature",
+                "desc": "DC/DC temperature",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 244
+            },
+            {
+                "name": "Battery temp max",
+                "label": "Battery temp max",
+                "desc": "Battery temp max",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 245
+            },
+            {
+                "name": "Battery temp avg",
+                "label": "Battery temp avg",
+                "desc": "Battery temp avg",
+                "type": "int16",
+                "units": "0.1℃",
+                "size": 1,
+                "offset": 246
+            },
+            {
+                "name": "MCB switch status",
+                "label": "MCB switch status",
+                "desc": "MCB switch status",
+                "type": "uint16",
+                "size": 1,
+                "offset": 247
+            },
+            {
+                "name": "Charge MOS switch status",
+                "label": "Charge MOS switch status",
+                "desc": "Charge MOS switch status",
+                "type": "uint16",
+                "size": 1,
+                "offset": 248
+            },
+            {
+                "name": "Discharge MOS switch status",
+                "label": "Discharge MOS switch status",
+                "desc": "Discharge MOS switch status",
+                "type": "uint16",
+                "size": 1,
+                "offset": 249
+            },
+            {
+                "name": "DC/DC switch status",
+                "label": "DC/DC switch status",
+                "desc": "DC/DC switch status",
+                "type": "uint16",
+                "size": 1,
+                "offset": 250
+            },
+            {
+                "name": "Coulomb Charge",
+                "label": "Coulomb Charge",
+                "desc": "Coulomb Charge",
+                "type": "int32",
+                "units": "mAh",
+                "size": 2,
+                "offset": 251
+            },
+            {
+                "name": "Coulomb Time",
+                "label": "Coulomb Time",
+                "desc": "Coulomb Time",
+                "type": "uint32",
+                "units": "s",
+                "size": 2,
+                "offset": 253
+            },
+            {
+                "name": "BMS system time",
+                "label": "BMS system time",
+                "desc": "BMS system time",
+                "type": "uint32",
+                "units": "s",
+                "size": 2,
+                "offset": 255
+            },
+            {
+                "name": "bat motion status",
+                "label": "bat motion status",
+                "desc": "bat motion status",
+                "type": "enum16",
+                "size": 1,
+                "offset": 257,
+                "symbols": [
+                    {
+                        "name": "NO_MOTION",
+                        "value": 0
+                    },
+                    {
+                        "name": "MOTION",
+                        "value": 1
+                    }
+                ]
+            },
+            {
+                "name": "BMS error",
+                "label": "BMS error",
+                "desc": "BMS error",
+                "type": "bitfield32",
+                "size": 2,
+                "offset": 258,
+                "symbols": [
+                    {
+                        "name": "Init Flash Fail",
+                        "value": 0
+                    },
+                    {
+                        "name": "Init AFE1 Fail",
+                        "value": 1
+                    },
+                    {
+                        "name": "Init AFE2 Fail",
+                        "value": 2
+                    },
+                    {
+                        "name": "Init ADC Fail",
+                        "value": 3
+                    },
+                    {
+                        "name": "UART Timeout",
+                        "value": 4
+                    },
+                    {
+                        "name": "AFE1 Timeout",
+                        "value": 5
+                    },
+                    {
+                        "name": "AFE2 Timeout",
+                        "value": 6
+                    },
+                    {
+                        "name": "ADC Timeout",
+                        "value": 7
+                    },
+                    {
+                        "name": "DSG MOS Control Fail",
+                        "value": 8
+                    },
+                    {
+                        "name": "CHG MOS Control Fail",
+                        "value": 9
+                    },
+                    {
+                        "name": "DCDC Control Fail",
+                        "value": 10
+                    },
+                    {
+                        "name": "MCB Control Fail",
+                        "value": 11
+                    }                   
+                ]
+            },
+            {
+                "name": "Current Capacity",
+                "label": "Current Capacity",
+                "desc": "Current Capacity",
+                "type": "int32",
+                "units": "mAh",
+                "size": 2,
+                "offset": 260
+            },
+            {
+                "name": "Current Charge",
+                "label": "Current Charge",
+                "desc": "Current Charge",
+                "type": "int32",
+                "units": "mAh",
+                "size": 2,
+                "offset": 262
+            },
+            {
+                "name": "Anti-Reversed",
+                "label": "Anti-Reversed",
+                "desc": "Anti-Reversed",
+                "type": "enum16",
+                "size": 1,
+                "offset": 264,
+                "symbols": [
+                    {
+                        "name": "NO_REVERSED",
+                        "value": 0
+                    },
+                    {
+                        "name": "REVERSED",
+                        "value": 1
+                    }
+                ]
+            },
+            {
+                "name": "Anti-theft",
+                "label": "Anti-theft",
+                "desc": "Anti-theft",
+                "type": "enum16",
+                "size": 1,
+                "offset": 265,
+                "symbols": [
+                    {
+                        "name": "OFF",
+                        "value": 0
+                    },
+                    {
+                        "name": "ON",
+                        "value": 1
+                    }
+                ]
+            },
+            {
+                "name": "Theft Alarm",
+                "label": "Theft Alarm",
+                "desc": "Theft Alarm",
+                "type": "enum16",
+                "size": 1,
+                "offset": 266,
+                "symbols": [
+                    {
+                        "name": "NO_TRIGGED",
+                        "value": 0
+                    },
+                    {
+                        "name": "TRIGGED",
+                        "value": 1
+                    }
+                ]
+            },
+            {
+                "name": "Theft trigged time",
+                "label": "Theft trigged time",
+                "desc": "Theft trigged time",
+                "type": "uint32 array",
+                "units": "s",
+                "size": 10,
+                "offset": 267
+            },
+            {
+                "name": "Motion trigged time",
+                "label": "Motion trigged time",
+                "desc": "Motion trigged time",
+                "type": "uint32 array",
+                "units": "s",
+                "size": 10,
+                "offset": 277
+            },
+            {
+                "name": "Theft trigged count",
+                "label": "Theft trigged count",
+                "desc": "Theft trigged count",
+                "type": "uint32",
+                "size": 2,
+                "offset": 287
+            }
+        ],
+        "type": "group"
+    },
+    "id": 64950
+} 
