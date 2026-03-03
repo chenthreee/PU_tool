@@ -103,7 +103,7 @@ LANGUAGES = {
             ('固件版本','Firmware_version'),
             ('在线容量','Online_capacity_in_Ah'),
         ],
-        'table_600': [
+        'table_400': [
             ('运行模式', 'operation_mode'),
             ('SOC', 'state_of_charge'),
             ('加热器', 'Heater'),
@@ -132,18 +132,18 @@ LANGUAGES = {
             ('OCD', 'OCD'),
             ('DCDC_CC', 'DCDC_CC'),
         ],
-        'table_600_base': [
+        'table_400_base': [
             ('运行模式', 'operation_mode'),
             ('SOC', 'state_of_charge'),
         ],
-        'table_600_status':[
+        'table_400_status':[
             ('加热器', 'Heater'),
             ('MCB状态', 'MCB_status'),
             ('Top Up', 'Top_Up'),
             ('Soft Start', 'Soft_Start'),
             ('OCC Recovery', 'OCC_Recovery'),
         ],
-        'table_600_alarms':[
+        'table_400_alarms':[
             ('COTC', 'COTC'),
             ('CUTC', 'CUTC'),
             ('CUTD', 'CUTD'),
@@ -165,101 +165,101 @@ LANGUAGES = {
             ('OCD', 'OCD'),
             ('DCDC_CC', 'DCDC_CC'),
         ],
-        'table_610': [
+        'table_410': [
             ('电池电流', 'battery_current'),
             ('电池电压', 'battery_voltage'),
             ('轨电压', 'rail_voltage'),
             ('MOS管温度', 'fet_temperature'),    
         ],
-        'table_620': [
+        'table_420': [
             ('电芯电压1', 'cell_voltage_1'),
             ('电芯电压2', 'cell_voltage_2'),
             ('电芯电压3', 'cell_voltage_3'),
             ('电芯电压4', 'cell_voltage_4'),    
         ],
-        'table_630': [
+        'table_430': [
             ('电芯电压5', 'cell_voltage_5'),
             ('电芯电压6', 'cell_voltage_6'),
             ('电芯电压7', 'cell_voltage_7'),
             ('电芯电压8', 'cell_voltage_8'),    
         ],
-        'table_640': [
+        'table_440': [
             ('电芯电压9', 'cell_voltage_9'),
             ('电芯电压10', 'cell_voltage_10'),
             ('电芯电压11', 'cell_voltage_11'),
             ('电芯电压12', 'cell_voltage_12'),    
         ],
-        'table_650': [
+        'table_450': [
             ('电芯电压13', 'cell_voltage_13'),
             ('电芯电压14', 'cell_voltage_14'),
             ('电芯电压15', 'cell_voltage_15'),
             ('电芯电压16', 'cell_voltage_16'),    
         ],
-        'table_660': [
+        'table_460': [
             ('电芯温度1', 'cell_temperature_1'),
             ('电芯温度2', 'cell_temperature_2'),
             ('电芯温度3', 'cell_temperature_3'),
             ('电芯温度4', 'cell_temperature_4'),    
         ],
-        'table_670': [
+        'table_470': [
             ('ARM防盗模式', 'Arm_Antitheft_mode'),
             ('外部输出', 'external_output'),  
         ],
-        'table_400': [
+        'table_600': [
             ('DCDC温度', 'dcdc_temperature_deci_celsius'),
             ('正极端子温度', 'pos_terminal_temp_deci_celsius'),
             ('负极端子温度', 'neg_terminal_temp_deci_celsius'),
         ],
-        'table_410': [
+        'table_610': [
             ('电池包负极温度1', 'neg_bat_temp_1_deci_celsius'),
             ('电池包负极温度2', 'neg_bat_temp_2_deci_celsius'),
             ('电池包正极温度', 'pos_bat_temp_cb_deci_celsius'),
         ],
-        'table_420': [
+        'table_620': [
             ('SOH', 'state_of_health'),
             ('循环次数', 'cycle_count'),
             ('生命时间', 'lifetime_hour'),
             ('电芯平衡状态', 'cell_balance_state'),
         ],
-        'table_430': [
+        'table_630': [
             ('MCU运行时间', 'mcu_uptime_seconds'),
             ('MCU温度', 'mcu_temperature_deci_celsius'),
             ('AFE温度', 'afe_temperature_deci_celsius'),
         ],
-        'table_440': [
+        'table_640': [
             ('esp32运行时间', 'esp32_uptime_seconds'),
             ('esp32可用堆大小', 'esp32_free_heap_size_byte'),
             ('esp32温度', 'esp32_temperature_celsius'),
         ],
-        'table_450': [
+        'table_650': [
             ('控制器版本前8CHAR', 'controller_version_part1'),
         ],
-        'table_460': [
+        'table_660': [
             ('控制器版本后8CHAR', 'controller_version_part2'),
         ],
-        'table_470': [
+        'table_670': [
             ('BMS版本前8CHAR', 'bms_version_part1'),
         ],
-        'table_480': [
+        'table_680': [
             ('BMS版本后8CHAR', 'bms_version_part2'),
         ],
-        'table_490': [
+        'table_690': [
             ('x轴加速度', 'accelerometer_x'),
             ('y轴加速度', 'accelerometer_y'),
             ('z轴加速度', 'accelerometer_z'),
         ],
-        'table_4A0': [
+        'table_6A0': [
             ('ESP32MAC地址', 'esp32_mac_address'),
             ('模块ID', 'module_id'),
             ('最大充电电流', 'max_charge_current'),
         ],
-        'table_4B0': [
+        'table_6B0': [
             ('电池序列号前8CHAR', 'battery_serial_part1'),
         ],
-        'table_4C0': [
+        'table_6C0': [
             ('电池序列号8~16CHAR', 'battery_serial_part2'),
         ],
-        'table_4D0': [
+        'table_6D0': [
             ('电池序列号last 4 CHAR', 'battery_serial_part3'),
         ],
     },
@@ -366,7 +366,7 @@ LANGUAGES = {
             ('Firmware_version','Firmware_version'),
             ('Online_capacity_in_Ah','Online_capacity_in_Ah'),
         ],
-        'table_600': [
+        'table_400': [
             ('operation_mode', 'operation_mode'),
             ('SOC', 'state_of_charge'),
             ('Heater', 'Heater'),
@@ -395,18 +395,18 @@ LANGUAGES = {
             ('OCD', 'OCD'),
             ('DCDC_CC', 'DCDC_CC'),
         ],
-        'table_600_base': [
+        'table_400_base': [
             ('operation_mode', 'operation_mode'),
             ('SOC', 'state_of_charge'),
         ],
-        'table_600_status':[
+        'table_400_status':[
             ('Heater', 'Heater'),
             ('MCB status', 'MCB_status'),
             ('Top Up', 'Top_Up'),
             ('Soft Start', 'Soft_Start'),
             ('OCC Recovery', 'OCC_Recovery'),
         ],
-        'table_600_alarms':[
+        'table_400_alarms':[
             ('COTC', 'COTC'),
             ('CUTC', 'CUTC'),
             ('CUTD', 'CUTD'),
@@ -428,108 +428,108 @@ LANGUAGES = {
             ('OCD', 'OCD'),
             ('DCDC_CC', 'DCDC_CC'),
         ],
-        'table_610': [
+        'table_410': [
             ('battery_current', 'battery_current'),
             ('battery_voltage', 'battery_voltage'),
             ('rail_voltage', 'rail_voltage'),
             ('fet_temperature', 'fet_temperature'),    
         ],
 
-        'table_610': [
+        'table_410': [
             ('battery_current', 'battery_current'),
             ('battery_voltage', 'battery_voltage'),
             ('rail_voltage', 'rail_voltage'),
             ('fet_temperature', 'fet_temperature'),    
         ],
-        'table_620': [
+        'table_420': [
             ('cell_voltage_1', 'cell_voltage_1'),
             ('cell_voltage_2', 'cell_voltage_2'),
             ('cell_voltage_3', 'cell_voltage_3'),
             ('cell_voltage_4', 'cell_voltage_4'),    
         ],
-        'table_630': [
+        'table_430': [
             ('cell_voltage_5', 'cell_voltage_5'),
             ('cell_voltage_6', 'cell_voltage_6'),
             ('cell_voltage_7', 'cell_voltage_7'),
             ('cell_voltage_8', 'cell_voltage_8'),    
         ],
-        'table_640': [
+        'table_440': [
             ('cell_voltage_9', 'cell_voltage_9'),
             ('cell_voltage_10', 'cell_voltage_10'),
             ('cell_voltage_11', 'cell_voltage_11'),
             ('cell_voltage_12', 'cell_voltage_12'),    
         ],
-        'table_650': [
+        'table_450': [
             ('cell_voltage_13', 'cell_voltage_13'),
             ('cell_voltage_14', 'cell_voltage_14'),
             ('cell_voltage_15', 'cell_voltage_15'),
             ('cell_voltage_16', 'cell_voltage_16'),    
         ],
-        'table_660': [
+        'table_460': [
             ('cell_temperature_1', 'cell_temperature_1'),
             ('cell_temperature_2', 'cell_temperature_2'),
             ('cell_temperature_3', 'cell_temperature_3'),
             ('cell_temperature_4', 'cell_temperature_4'),    
         ],
-        'table_670': [
+        'table_470': [
             ('Arm_Antitheft_mode', 'Arm_Antitheft_mode'),
             ('external_output', 'external_output'),  
         ],
-        'table_400': [
+        'table_600': [
             ('dcdc_temperature_deci_celsius', 'dcdc_temperature_deci_celsius'),
             ('pos_terminal_temp_deci_celsius', 'pos_terminal_temp_deci_celsius'),
             ('neg_terminal_temp_deci_celsius', 'neg_terminal_temp_deci_celsius'),
         ],
-        'table_410': [
+        'table_610': [
             ('neg_bat_temp_1_deci_celsius', 'neg_bat_temp_1_deci_celsius'),
             ('neg_bat_temp_2_deci_celsius', 'neg_bat_temp_2_deci_celsius'),
             ('pos_bat_temp_cb_deci_celsius', 'pos_bat_temp_cb_deci_celsius'),
         ],
-        'table_420': [
+        'table_620': [
             ('SOH', 'state_of_health'),
             ('cycle_count', 'cycle_count'),
             ('lifetime_hour', 'lifetime_hour'),
             ('cell_balance_state', 'cell_balance_state'),
         ],
-        'table_430': [
+        'table_630': [
             ('mcu_uptime_seconds', 'mcu_uptime_seconds'),
             ('mcu_temperature_deci_celsius', 'mcu_temperature_deci_celsius'),
             ('afe_temperature_deci_celsius', 'afe_temperature_deci_celsius'),
         ],
-        'table_440': [
+        'table_640': [
             ('esp32_uptime_seconds', 'esp32_uptime_seconds'),
             ('esp32_free_heap_size_byte', 'esp32_free_heap_size_byte'),
             ('esp32_temperature_celsius', 'esp32_temperature_celsius'),
         ],
-        'table_450': [
+        'table_650': [
             ('controller_version first 8 chars', 'controller_version_part1'),
         ],
-        'table_460': [
+        'table_660': [
             ('controller_version last 8 chars', 'controller_version_part2'),
         ],
-        'table_470': [
+        'table_670': [
             ('BMS_version_first8CHAR', 'bms_version_part1'),
         ],
-        'table_480': [
+        'table_680': [
             ('BMS_version_last8CHAR', 'bms_version_part2'),
         ],
-        'table_490': [
+        'table_690': [
             ('accelerometer_x', 'accelerometer_x'),
             ('accelerometer_y', 'accelerometer_y'),
             ('accelerometer_z', 'accelerometer_z'),
         ],
-        'table_4A0': [
+        'table_6A0': [
             ('esp32_mac_address', 'esp32_mac_address'),
             ('module_id', 'module_id'),
             ('max_charge_current', 'max_charge_current'),
         ],
-        'table_4B0': [
+        'table_6B0': [
             ('battery_serial_part1', 'battery_serial_part1'),
         ],
-        'table_4C0': [
+        'table_6C0': [
             ('battery_serial_part2', 'battery_serial_part2'),
         ],
-        'table_4D0': [
+        'table_6D0': [
             ('battery_serial_part3', 'battery_serial_part3'),
         ],
     }

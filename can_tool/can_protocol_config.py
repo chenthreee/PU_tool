@@ -73,7 +73,7 @@ MESSAGE_STRUCTURES = {
             {'name': 'warnings', 'offset': 4, 'length': 4, 'data_type': 'bit_flags', 'description': '警告位'},
         ]
     },
-    0x600: {
+    0x400: {
         'name': 'BMS模式',
         'length': 8,
         'fields': [
@@ -82,7 +82,7 @@ MESSAGE_STRUCTURES = {
             {'name': 'status', 'offset': 2, 'length': 2, 'data_type': 'bit_flags', 'description': 'status'},
         ]
     },
-    0x610: {
+    0x410: {
         'name': '电池参数',
         'length': 8,
         'fields': [
@@ -92,7 +92,7 @@ MESSAGE_STRUCTURES = {
             {'name': 'fet_temperature', 'offset': 6, 'length': 2, 'data_type': 'int16', 'scaling': 0.1, 'unit': '°C', 'description': 'fet_temperature'},
         ]
     },
-    0x620: {
+    0x420: {
         'name': '电芯电压',
         'length': 8,
         'fields': [
@@ -102,7 +102,7 @@ MESSAGE_STRUCTURES = {
             {'name': 'cell_voltage_4', 'offset': 6, 'length': 2, 'data_type': 'uint16', 'scaling': 0.001, 'unit': 'V','description': 'Cell voltage 4 in mV'},
         ]
     },
-    0x630: {
+    0x430: {
         'name': '电芯电压',
         'length': 8,
         'fields': [
@@ -112,7 +112,7 @@ MESSAGE_STRUCTURES = {
             {'name': 'cell_voltage_8', 'offset': 6, 'length': 2, 'data_type': 'uint16', 'scaling': 0.001, 'unit': 'V','description': 'Cell voltage 8 in mV'},
         ]
     },
-    0x640: {
+    0x440: {
         'name': '电芯电压',
         'length': 8,
         'fields': [
@@ -122,7 +122,7 @@ MESSAGE_STRUCTURES = {
             {'name': 'cell_voltage_12', 'offset': 6, 'length': 2, 'data_type': 'uint16', 'scaling': 0.001, 'unit': 'V','description': 'Cell voltage 12 in mV'},
         ]
     },
-    0x650: {
+    0x450: {
         'name': '电芯电压',
         'length': 8,
         'fields': [
@@ -132,7 +132,7 @@ MESSAGE_STRUCTURES = {
             {'name': 'cell_voltage_16', 'offset': 6, 'length': 2, 'data_type': 'uint16', 'scaling': 0.001, 'unit': 'V','description': 'Cell voltage 16 in mV'},
         ]
     },
-    0x660: {
+    0x460: {
         'name': '电芯温度',
         'length': 8,
         'fields': [
@@ -142,7 +142,7 @@ MESSAGE_STRUCTURES = {
             {'name': 'cell_temperature_4', 'offset': 6, 'length': 2, 'data_type': 'int16', 'scaling': 0.1, 'unit': '°C','description': 'Cell temperature 4 in °C'},
         ]
     },
-    0x670: {
+    0x470: {
         'name': '配置信息',
         'length': 8,
         'fields': [
@@ -150,7 +150,7 @@ MESSAGE_STRUCTURES = {
             {'name': 'external_output', 'offset': 1, 'length': 1, 'data_type': 'uint8', 'scaling': 1, 'description': '外部输出'},
         ]
     },
-    0x400: {
+    0x600: {
         'name': '系统参数',
         'length': 8,
         'fields': [
@@ -159,7 +159,7 @@ MESSAGE_STRUCTURES = {
             {'name': 'neg_terminal_temp_deci_celsius', 'offset': 4, 'length': 2, 'data_type': 'int16', 'scaling': 0.1, 'unit': '°C','description': 'Negative terminal temperature 2 in deci-Celcius'},
         ]
     },
-    0x410: {
+    0x610: {
         'name': '系统参数',
         'length': 8,
         'fields': [
@@ -168,7 +168,7 @@ MESSAGE_STRUCTURES = {
             {'name': 'pos_bat_temp_cb_deci_celsius', 'offset': 4, 'length': 2, 'data_type': 'int16', 'scaling': 0.1, 'unit': '°C','description': 'Positive internal cable joint in deci-Celcius'},
         ]
     },
-    0x420: {
+    0x620: {
         'name': '系统参数',
         'length': 8,
         'fields': [
@@ -178,7 +178,7 @@ MESSAGE_STRUCTURES = {
             {'name': 'cell_balance_state', 'offset': 6, 'length': 2, 'data_type': 'uint16', 'scaling': 1, 'description': 'Cell balaning state'},
         ]
     },
-    0x430: {
+    0x630: {
         'name': '系统参数',
         'length': 8,
         'fields': [
@@ -187,7 +187,7 @@ MESSAGE_STRUCTURES = {
             {'name': 'afe_temperature_deci_celsius', 'offset': 6, 'length': 2, 'data_type': 'int16', 'scaling': 0.1, 'unit': '°C','description': 'AFE temperature in deci-Celcius'},
         ]
     },
-    0x440: {
+    0x640: {
         'name': '系统参数',
         'length': 8,
         'fields': [
@@ -196,35 +196,35 @@ MESSAGE_STRUCTURES = {
             {'name': 'esp32_temperature_celsius', 'offset': 7, 'length': 1, 'data_type': 'int8', 'scaling': 1, 'unit': '°C','description': 'ESP32 temperature in Celcius'},
         ]
     },
-    0x450: {
+    0x650: {
         'name': '控制器版本',
         'length': 8,
         'fields': [
             {'name': 'controller_version', 'offset': 0, 'length': 8, 'data_type': 'char', 'description': 'controller_version first 8 chars'},
         ]
     },
-    0x460: {
+    0x660: {
         'name': '控制器版本',
         'length': 8,
         'fields': [
             {'name': 'controller_version', 'offset': 0, 'length': 8, 'data_type': 'char', 'description': 'controller_version last 8 chars'},
         ]
     },
-    0x470: {
+    0x670: {
         'name': 'bms版本',
         'length': 8,
         'fields': [
             {'name': 'bms_version', 'offset': 0, 'length': 8, 'data_type': 'char', 'description': 'bms_version first 8 chars'},
         ]
     },
-    0x480: {
+    0x680: {
         'name': 'bms版本',
         'length': 8,
         'fields': [
             {'name': 'bms_version', 'offset': 0, 'length': 8, 'data_type': 'char', 'description': 'bms_version last 8 chars'},
         ]
     },
-    0x490: {
+    0x690: {
         'name': '加速度计',
         'length': 8,
         'fields': [
@@ -233,7 +233,7 @@ MESSAGE_STRUCTURES = {
             {'name': 'accelerometer_z', 'offset': 4, 'length': 2, 'data_type': 'int16', 'scaling': 1, 'unit': 'milli-g','description': 'Accelerometer z in g'},
         ]
     },
-    0x4A0: {
+    0x6A0: {
         'name': 'MAC地址',
         'length': 8,
         'fields': [
@@ -420,8 +420,8 @@ def unsigned_32bit(byte3, byte2, byte1, byte0):
     """将四个字节转换为无符号32位整数"""
     return (byte3 << 24) | (byte2 << 16) | (byte1 << 8) | byte0
 
-# def parse_60n_message(data, battery_address=1):
-#     """解析0x60n报文 - 电池模式和状态"""
+# def parse_40n_message(data, battery_address=1):
+#     """解析0x40n报文 - 电池模式和状态"""
 #     if len(data) >= 8:
 #         operation_mode = data[0] & 0x07  # bits 0-2
 #         state_of_charge = data[1] * 0.5  # SOC in 0.5% resolution     
@@ -442,20 +442,20 @@ def unsigned_32bit(byte3, byte2, byte1, byte0):
 #             'CUTC': bool(alarms_bits & 0x04),
 #             'CUTD': bool(alarms_bits & 0x08),
 #             'System Lock': bool(alarms_bits & 0x10),
-#             'SCD': bool(alarms_bits & 0x60),
-#             'MOT': bool(alarms_bits & 0x40),
+#             'SCD': bool(alarms_bits & 0x40),
+#             'MOT': bool(alarms_bits & 0x60),
 #             'DCDC_OT': bool(alarms_bits & 0x80),
 #             'CMC': bool(alarms_bits & 0x100),
-#             'BVP': bool(alarms_bits & 0x600),
-#             'CTD': bool(alarms_bits & 0x400),
+#             'BVP': bool(alarms_bits & 0x400),
+#             'CTD': bool(alarms_bits & 0x600),
 #             'MCB_TRIP': bool(alarms_bits & 0x800),
 #             'UCM': bool(alarms_bits & 0x1000),
-#             'WDT': bool(alarms_bits & 0x6000),
-#             'U_SOC': bool(alarms_bits & 0x4000),
+#             'WDT': bool(alarms_bits & 0x4000),
+#             'U_SOC': bool(alarms_bits & 0x6000),
 #             'CUVC': bool(alarms_bits & 0x8000),
 #             'CUV': bool(alarms_bits & 0x10000),
-#             'COV': bool(alarms_bits & 0x60000),
-#             'OCC': bool(alarms_bits & 0x40000),
+#             'COV': bool(alarms_bits & 0x40000),
+#             'OCC': bool(alarms_bits & 0x60000),
 #             'OCD': bool(alarms_bits & 0x80000),
 #         }       
 #         return {
@@ -466,8 +466,8 @@ def unsigned_32bit(byte3, byte2, byte1, byte0):
 #             'battery_address': battery_address
 #         }
 #     return None
-def parse_60n_message(data, battery_address=1):
-    """解析0x60n报文 - 电池模式和状态"""
+def parse_40n_message(data, battery_address=1):
+    """解析0x40n报文 - 电池模式和状态"""
     if len(data) >= 8:
         operation_mode = data[0] & 0x07  # bits 0-2
         state_of_charge = data[1] * 0.5  # SOC in 0.5% resolution
@@ -486,20 +486,20 @@ def parse_60n_message(data, battery_address=1):
         CUTC= bool(alarms_bits & 0x04)
         CUTD= bool(alarms_bits & 0x08)
         System_Lock= bool(alarms_bits & 0x10)
-        SCD= bool(alarms_bits & 0x60)
-        MOT= bool(alarms_bits & 0x40)
+        SCD= bool(alarms_bits & 0x40)
+        MOT= bool(alarms_bits & 0x60)
         DCDC_OT= bool(alarms_bits & 0x80)
         CMC= bool(alarms_bits & 0x100)
-        BVP= bool(alarms_bits & 0x600)
-        CTD= bool(alarms_bits & 0x400)
+        BVP= bool(alarms_bits & 0x400)
+        CTD= bool(alarms_bits & 0x600)
         MCB_TRIP= bool(alarms_bits & 0x800)
         UCM= bool(alarms_bits & 0x1000)
-        WDT= bool(alarms_bits & 0x6000)
-        U_SOC= bool(alarms_bits & 0x4000)
+        WDT= bool(alarms_bits & 0x4000)
+        U_SOC= bool(alarms_bits & 0x6000)
         CUVC= bool(alarms_bits & 0x8000)
         CUV= bool(alarms_bits & 0x10000)
-        COV= bool(alarms_bits & 0x60000)
-        OCC= bool(alarms_bits & 0x40000)
+        COV= bool(alarms_bits & 0x40000)
+        OCC= bool(alarms_bits & 0x60000)
         OCD= bool(alarms_bits & 0x80000)
         DCDC_CC= bool(alarms_bits & 0x100000)
         
@@ -539,8 +539,8 @@ def parse_60n_message(data, battery_address=1):
         }
     return None
 
-def parse_61n_message(data, battery_address=1):
-    """解析0x61n报文 - 电池电流、电压和温度"""
+def parse_41n_message(data, battery_address=1):
+    """解析0x41n报文 - 电池电流、电压和温度"""
     if len(data) >= 8:
         battery_current = round(signed_16bit(data[1], data[0]) * 0.1, 1)  # A
         battery_voltage = round(unsigned_16bit(data[3], data[2]) * 0.001, 3)  # V
@@ -556,8 +556,8 @@ def parse_61n_message(data, battery_address=1):
         }
     return None
 
-def parse_62n_message(data, battery_address=1):
-    """解析0x62n报文 - 电芯电压1-4"""
+def parse_42n_message(data, battery_address=1):
+    """解析0x42n报文 - 电芯电压1-4"""
     if len(data) >= 8:
         return {
             'cell_voltage_1': f"{(data[1] << 8 | data[0]) * 0.001:.3f}",
@@ -568,8 +568,8 @@ def parse_62n_message(data, battery_address=1):
         }
     return None
 
-def parse_63n_message(data, battery_address=1):
-    """解析0x63n报文 - 电芯电压5-8"""
+def parse_43n_message(data, battery_address=1):
+    """解析0x43n报文 - 电芯电压5-8"""
     if len(data) >= 8:
         return {
             'cell_voltage_5': f"{(data[1] << 8 | data[0]) * 0.001:.3f}",
@@ -580,8 +580,8 @@ def parse_63n_message(data, battery_address=1):
         }
     return None
 
-def parse_64n_message(data, battery_address=1):
-    """解析0x64n报文 - 电芯电压9-12"""
+def parse_44n_message(data, battery_address=1):
+    """解析0x44n报文 - 电芯电压9-12"""
     if len(data) >= 8:
         return {
             'cell_voltage_9': f"{(data[1] << 8 | data[0]) * 0.001:.3f}",
@@ -592,8 +592,8 @@ def parse_64n_message(data, battery_address=1):
         }
     return None 
 
-def parse_65n_message(data, battery_address=1):
-    """解析0x65n报文 - 电芯电压13-16"""
+def parse_45n_message(data, battery_address=1):
+    """解析0x45n报文 - 电芯电压13-16"""
     if len(data) >= 8:
         return {
             'cell_voltage_13': f"{(data[1] << 8 | data[0]) * 0.001:.3f}",
@@ -604,8 +604,8 @@ def parse_65n_message(data, battery_address=1):
         }
     return None
 
-def parse_66n_message(data, battery_address=1):
-    """解析0x66n报文 - 电芯温度1-4"""
+def parse_46n_message(data, battery_address=1):
+    """解析0x46n报文 - 电芯温度1-4"""
     if len(data) >= 8:
         cell_temperature_1 = round(signed_16bit(data[1], data[0]) * 0.1, 1)
         cell_temperature_2 = round(signed_16bit(data[3], data[2]) * 0.1, 1)
@@ -619,8 +619,8 @@ def parse_66n_message(data, battery_address=1):
             'battery_address': battery_address
         }
     return None
-def parse_67n_message(data, battery_address=1):
-    """解析0x60n报文 - On configuration from site controller"""
+def parse_47n_message(data, battery_address=1):
+    """解析0x40n报文 - On configuration from site controller"""
     if len(data) >= 8:
         Arm_Antitheft_mode = data[0] & 0x01
         external_output = data[1]
@@ -632,8 +632,8 @@ def parse_67n_message(data, battery_address=1):
         }
     return None
 
-def parse_40n_message(data, battery_address=1):
-    """解析0x40n报文 - 系统温度"""
+def parse_60n_message(data, battery_address=1):
+    """解析0x60n报文 - 系统温度"""
     if len(data) >= 8:
         dcdc_temperature_deci_celsius = round(signed_16bit(data[1], data[0]) * 0.1, 1)
         pos_terminal_temp_deci_celsius = round(signed_16bit(data[3], data[2]) * 0.1, 1)
@@ -646,8 +646,8 @@ def parse_40n_message(data, battery_address=1):
         }
     return None
 
-def parse_41n_message(data, battery_address=1):
-    """解析0x41n报文 - 内部温度"""
+def parse_61n_message(data, battery_address=1):
+    """解析0x61n报文 - 内部温度"""
     if len(data) >= 8:
         neg_bat_temp_1_deci_celsius = round(signed_16bit(data[1], data[0]) * 0.1, 1)
         neg_bat_temp_2_deci_celsius = round(signed_16bit(data[3], data[2]) * 0.1, 1)
@@ -660,8 +660,8 @@ def parse_41n_message(data, battery_address=1):
         }
     return None
 
-def parse_42n_message(data, battery_address=1):
-    """解析0x42n报文 - 健康状态和循环次数"""
+def parse_62n_message(data, battery_address=1):
+    """解析0x62n报文 - 健康状态和循环次数"""
     if len(data) >= 8:
         return {
             'state_of_health': f"{data[0] * 0.5:.1f}",
@@ -672,8 +672,8 @@ def parse_42n_message(data, battery_address=1):
         }
     return None
 
-def parse_43n_message(data, battery_address=1):
-    """解析0x43n报文 - MCU状态"""
+def parse_63n_message(data, battery_address=1):
+    """解析0x63n报文 - MCU状态"""
     if len(data) >= 8:
         mcu_uptime_seconds = unsigned_32bit(data[3], data[2], data[1], data[0])
         mcu_temperature_deci_celsius = round(signed_16bit(data[5], data[4]) * 0.1, 1)
@@ -686,8 +686,8 @@ def parse_43n_message(data, battery_address=1):
         }
     return None
 
-def parse_44n_message(data, battery_address=1):
-    """解析0x44n报文 - ESP32状态"""
+def parse_64n_message(data, battery_address=1):
+    """解析0x64n报文 - ESP32状态"""
     if len(data) >= 8:
 
         return {
@@ -698,8 +698,8 @@ def parse_44n_message(data, battery_address=1):
         }
     return None
 
-def parse_45n_message(data, battery_address=1):
-    """解析0x45n报文 - 控制器版本前8字符"""
+def parse_65n_message(data, battery_address=1):
+    """解析0x65n报文 - 控制器版本前8字符"""
     if len(data) >= 8:
         #controller_version = ''.join(['%02x' % b for b in data if b != 0])
         controller_version = ''.join([chr(b) for b in data if b != 0])
@@ -709,8 +709,8 @@ def parse_45n_message(data, battery_address=1):
         }
     return None
 
-def parse_46n_message(data, battery_address=1):
-    """解析0x46n报文 - 控制器版本后8字符"""
+def parse_66n_message(data, battery_address=1):
+    """解析0x66n报文 - 控制器版本后8字符"""
     if len(data) >= 8:
         #controller_version = ''.join(['%02x' % b for b in data if b != 0])
         controller_version = ''.join([chr(b) for b in data if b != 0])
@@ -720,8 +720,8 @@ def parse_46n_message(data, battery_address=1):
         }
     return None
 
-def parse_47n_message(data, battery_address=1):
-    """解析0x47n报文 - BMS版本前8字符"""
+def parse_67n_message(data, battery_address=1):
+    """解析0x67n报文 - BMS版本前8字符"""
     if len(data) >= 8:
         #bms_version = ''.join(['%02x' % b for b in data if b != 0])
         bms_version = ''.join([chr(b) for b in data if b != 0])
@@ -731,8 +731,8 @@ def parse_47n_message(data, battery_address=1):
         }
     return None
 
-def parse_48n_message(data, battery_address=1):
-    """解析0x48n报文 - BMS版本后8字符"""
+def parse_68n_message(data, battery_address=1):
+    """解析0x68n报文 - BMS版本后8字符"""
     if len(data) >= 8:
         #bms_version = ''.join(['%02x' % b for b in data if b != 0])
         bms_version = ''.join([chr(b) for b in data if b != 0])
@@ -742,8 +742,8 @@ def parse_48n_message(data, battery_address=1):
         }
     return None
 
-def parse_49n_message(data, battery_address=1):
-    """解析0x49n报文 - 加速度计"""
+def parse_69n_message(data, battery_address=1):
+    """解析0x69n报文 - 加速度计"""
     if len(data) >= 8:
         return {
             'accelerometer_x': signed_16bit(data[1], data[0]),
@@ -753,8 +753,8 @@ def parse_49n_message(data, battery_address=1):
         }
     return None
 
-def parse_4An_message(data, battery_address=1):
-    """解析0x4An报文 - MAC地址和模块ID"""
+def parse_6An_message(data, battery_address=1):
+    """解析0x6An报文 - MAC地址和模块ID"""
     if len(data) >= 8:
         mac_address = ':'.join(['%02x' % b for b in data[:6]])
         return {
@@ -764,8 +764,8 @@ def parse_4An_message(data, battery_address=1):
             'battery_address': battery_address
         }
     return None
-def parse_4Bn_message(data, battery_address=1):
-    """解析0x4Bn报文 - BMS序列号前8字符"""
+def parse_6Bn_message(data, battery_address=1):
+    """解析0x6Bn报文 - BMS序列号前8字符"""
     if len(data) >= 8:
         battery_serial = ''.join([chr(b) for b in data if b != 0])
         return {
@@ -774,8 +774,8 @@ def parse_4Bn_message(data, battery_address=1):
         }
     return None
 
-def parse_4Cn_message(data, battery_address=1):
-    """解析0x4Cn报文 - BMS序列号8~16字符"""
+def parse_6Cn_message(data, battery_address=1):
+    """解析0x6Cn报文 - BMS序列号8~16字符"""
     if len(data) >= 8:
         battery_serial = ''.join([chr(b) for b in data if b != 0])
         return {
@@ -783,8 +783,8 @@ def parse_4Cn_message(data, battery_address=1):
             'battery_address': battery_address
         }
     return None
-def parse_4Dn_message(data, battery_address=1):
-    """解析0x4Dn报文 - BMS序列号last 4 chars"""
+def parse_6Dn_message(data, battery_address=1):
+    """解析0x6Dn报文 - BMS序列号last 4 chars"""
     if len(data) >= 8:
         #battery_serial = ''.join([chr(b) for b in data if b != 0])
         battery_serial = ''.join(chr(b) for b in data[:4] if b != 0)
@@ -795,10 +795,10 @@ def parse_4Dn_message(data, battery_address=1):
     return None
 def get_battery_address_from_can_id(can_id):
     """从CAN ID中提取电池地址"""
-    # 对于0x60n格式的ID，n就是电池地址
-    if 0x600 <= can_id <= 0x6FF:
+    # 对于0x40n格式的ID，n就是电池地址
+    if 0x400 <= can_id <= 0x4FF:
         return can_id & 0x0F
-    elif 0x400 <= can_id <= 0x4FF:
+    elif 0x600 <= can_id <= 0x6FF:
         return can_id & 0x0F
     return 1  # 默认地址
 
@@ -819,26 +819,8 @@ def parse_can_message(can_id, data):
     # 新增的报文解析
     battery_address = get_battery_address_from_can_id(can_id)
     
-    # 0x60n系列
-    if (can_id & 0xFF0) == 0x600:
-        return parse_60n_message(data, battery_address)
-    elif (can_id & 0xFF0) == 0x610:
-        return parse_61n_message(data, battery_address)
-    elif (can_id & 0xFF0) == 0x620:
-        return parse_62n_message(data, battery_address)
-    elif (can_id & 0xFF0) == 0x630:
-        return parse_63n_message(data, battery_address)
-    elif (can_id & 0xFF0) == 0x640:
-        return parse_64n_message(data, battery_address)
-    elif (can_id & 0xFF0) == 0x650:
-        return parse_65n_message(data, battery_address)
-    elif (can_id & 0xFF0) == 0x660:
-        return parse_66n_message(data, battery_address)
-    elif (can_id & 0xFF0) == 0x670:
-        return parse_67n_message(data, battery_address)
-    
     # 0x40n系列
-    elif (can_id & 0xFF0) == 0x400:
+    if (can_id & 0xFF0) == 0x400:
         return parse_40n_message(data, battery_address)
     elif (can_id & 0xFF0) == 0x410:
         return parse_41n_message(data, battery_address)
@@ -854,17 +836,35 @@ def parse_can_message(can_id, data):
         return parse_46n_message(data, battery_address)
     elif (can_id & 0xFF0) == 0x470:
         return parse_47n_message(data, battery_address)
-    elif (can_id & 0xFF0) == 0x480:
-        return parse_48n_message(data, battery_address)
-    elif (can_id & 0xFF0) == 0x490:
-        return parse_49n_message(data, battery_address)
-    elif (can_id & 0xFF0) == 0x4A0:
-        return parse_4An_message(data, battery_address)
-    elif (can_id & 0xFF0) == 0x4B0:
-        return parse_4Bn_message(data, battery_address)
-    elif (can_id & 0xFF0) == 0x4C0:
-        return parse_4Cn_message(data, battery_address)
-    elif (can_id & 0xFF0) == 0x4D0:
-        return parse_4Dn_message(data, battery_address)
+    
+    # 0x60n系列
+    elif (can_id & 0xFF0) == 0x600:
+        return parse_60n_message(data, battery_address)
+    elif (can_id & 0xFF0) == 0x610:
+        return parse_61n_message(data, battery_address)
+    elif (can_id & 0xFF0) == 0x620:
+        return parse_62n_message(data, battery_address)
+    elif (can_id & 0xFF0) == 0x630:
+        return parse_63n_message(data, battery_address)
+    elif (can_id & 0xFF0) == 0x640:
+        return parse_64n_message(data, battery_address)
+    elif (can_id & 0xFF0) == 0x650:
+        return parse_65n_message(data, battery_address)
+    elif (can_id & 0xFF0) == 0x660:
+        return parse_66n_message(data, battery_address)
+    elif (can_id & 0xFF0) == 0x670:
+        return parse_67n_message(data, battery_address)
+    elif (can_id & 0xFF0) == 0x680:
+        return parse_68n_message(data, battery_address)
+    elif (can_id & 0xFF0) == 0x690:
+        return parse_69n_message(data, battery_address)
+    elif (can_id & 0xFF0) == 0x6A0:
+        return parse_6An_message(data, battery_address)
+    elif (can_id & 0xFF0) == 0x6B0:
+        return parse_6Bn_message(data, battery_address)
+    elif (can_id & 0xFF0) == 0x6C0:
+        return parse_6Cn_message(data, battery_address)
+    elif (can_id & 0xFF0) == 0x6D0:
+        return parse_6Dn_message(data, battery_address)
     else:
         return None

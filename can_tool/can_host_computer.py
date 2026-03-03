@@ -1513,12 +1513,12 @@ class CANHostComputer:
         
     def create_307_message(self):
         """创建0x307报文数据 - Inverter identification from inverter to BMS"""
-        # 根据协议文档：0x12 0x34 0x56 0x78 V I C 0x00
+        # 根据协议文档：0x12 0x34 0x56 0x48 V I C 0x00
         data = bytearray(8)
         data[0] = 0x12  # Byte 0
         data[1] = 0x34  # Byte 1
         data[2] = 0x56  # Byte 2
-        data[3] = 0x78  # Byte 3
+        data[3] = 0x48  # Byte 3
         data[4] = ord('V')  # Byte 4: ASCII 'V'
         data[5] = ord('I')  # Byte 5: ASCII 'I'
         data[6] = ord('C')  # Byte 6: ASCII 'C'
@@ -1643,12 +1643,12 @@ class CANHostComputer:
         # 扩展支持的CAN ID列表 0x35E, 0x35F
         supported_ids = [0x351, 0x355, 0x356, 0x35A]
         
-        # 添加新的0x6nn系列ID支持
+        # 添加新的0x4nn系列ID支持
         for i in range(7):  # 支持电池地址0-6
             supported_ids.extend([
-                0x600 + i, 0x610 + i, 0x620 + i, 0x630 + i, 0x640 + i, 0x650 + i, 0x660 + i, 0x670 + i,
-                0x400 + i, 0x410 + i, 0x420 + i, 0x430 + i, 0x440 + i, 0x450 + i, 0x460 + i,
-                0x470 + i, 0x480 + i, 0x490 + i, 0x4A0 + i, 0x4B0 + i, 0x4C0 + i, 0x4D0 + i
+                0x400 + i, 0x410 + i, 0x420 + i, 0x430 + i, 0x440 + i, 0x450 + i, 0x460 + i, 0x470 + i,
+                0x600 + i, 0x610 + i, 0x620 + i, 0x630 + i, 0x640 + i, 0x650 + i, 0x660 + i,
+                0x670 + i, 0x680 + i, 0x690 + i, 0x6A0 + i, 0x6B0 + i, 0x6C0 + i, 0x6D0 + i
             ])
         
         if msg_id in supported_ids:
@@ -1740,35 +1740,35 @@ class CANHostComputer:
         self.data_tree.insert('', 'end', values=('', '', '', '', '', ''), tags=('divider',))
         self.data_tree.tag_configure('divider', background='#bcd9f3')
 
-        # 0x600, 0x610, etc.
+        # 0x400, 0x410, etc.
         tables_to_process = [
-            ('table_600_base', '0x600'), ('table_600_status', '0x600'), ('table_600_alarms', '0x600'),
+            ('table_400_base', '0x400'), ('table_400_status', '0x400'), ('table_400_alarms', '0x400'),
             ('divider1', None), 
-            ('table_610', '0x610'),
+            ('table_410', '0x410'),
             ('divider2', None),
-            ('table_620', '0x620'), ('table_630', '0x630'), ('table_640', '0x640'), ('table_650', '0x650'),
+            ('table_420', '0x420'), ('table_430', '0x430'), ('table_440', '0x440'), ('table_450', '0x450'),
             ('divider3', None),
-            ('table_660', '0x660'),
+            ('table_460', '0x460'),
             ('divider4', None),
-            ('table_670', '0x670'),
+            ('table_470', '0x470'),
             ('divider5', None),
-            ('table_400', '0x400'), ('table_410', '0x410'),
+            ('table_600', '0x600'), ('table_610', '0x610'),
             ('divider6', None),
-            ('table_420', '0x420'),
+            ('table_620', '0x620'),
             ('divider7', None),
-            ('table_430', '0x430'),
+            ('table_630', '0x630'),
             ('divider8', None),
-            ('table_440', '0x440'),
+            ('table_640', '0x640'),
             ('divider9', None),
-            ('table_450', '0x450'), ('table_460', '0x460'),
+            ('table_650', '0x650'), ('table_660', '0x660'),
             ('divider10', None),
-            ('table_470', '0x470'), ('table_480', '0x480'),
+            ('table_670', '0x670'), ('table_680', '0x680'),
             ('divider11', None),
-            ('table_490', '0x490'),
+            ('table_690', '0x690'),
             ('divider12', None),
-            ('table_4A0', '0x4A0'),
+            ('table_6A0', '0x6A0'),
             ('divider13', None),
-            ('table_4B0', '0x4B0'), ('table_4C0', '0x4C0'), ('table_4D0', '0x4D0')
+            ('table_6B0', '0x6B0'), ('table_6C0', '0x6C0'), ('table_6D0', '0x6D0')
         ]
 
         for table_name, can_id in tables_to_process:
@@ -1829,8 +1829,8 @@ class CANHostComputer:
             display_can_id = f'0x{can_id:03X}'
             
             # Determine tag CAN ID for lookup
-            if (0x600 <= can_id <= 0x6FF) or (0x400 <= can_id <= 0x4FF):
-                # For 6xx messages, use group ID for tag (e.g., 0x600)
+            if (0x400 <= can_id <= 0x4FF) or (0x600 <= can_id <= 0x6FF):
+                # For 6xx messages, use group ID for tag (e.g., 0x400)
                 tag_can_id_str = f'0x{(can_id & 0xFF0):03X}'
             else:
                 # For other messages, use actual ID for tag
@@ -2099,43 +2099,43 @@ class CANHostComputer:
         parameter_list.append(('', ''))  # 分割行
         parameter_list.extend([(label, '0x35A') for label, key in lang['table_35A_warning']])
         parameter_list.append(('', ''))  # 分割行
-        parameter_list.extend([(label, '0x600') for label, key in lang['table_600_base']])
-        parameter_list.extend([(label, '0x600') for label, key in lang['table_600_status']])
-        parameter_list.extend([(label, '0x600') for label, key in lang['table_600_alarms']])
+        parameter_list.extend([(label, '0x400') for label, key in lang['table_400_base']])
+        parameter_list.extend([(label, '0x400') for label, key in lang['table_400_status']])
+        parameter_list.extend([(label, '0x400') for label, key in lang['table_400_alarms']])
         parameter_list.append(('', ''))  # 分割行
-        parameter_list.extend([(label, '0x610') for label, key in lang['table_610']])
-        parameter_list.append(('', ''))  # 分割行
-        parameter_list.extend([(label, '0x620') for label, key in lang['table_620']])
-        parameter_list.extend([(label, '0x630') for label, key in lang['table_630']])
-        parameter_list.extend([(label, '0x640') for label, key in lang['table_640']])
-        parameter_list.extend([(label, '0x650') for label, key in lang['table_650']])
-        parameter_list.append(('', ''))  # 分割行
-        parameter_list.extend([(label, '0x660') for label, key in lang['table_660']])
-        parameter_list.append(('', ''))  # 分割行
-        parameter_list.extend([(label, '0x670') for label, key in lang['table_670']])
-        parameter_list.append(('', ''))  # 分割行
-        parameter_list.extend([(label, '0x400') for label, key in lang['table_400']])
         parameter_list.extend([(label, '0x410') for label, key in lang['table_410']])
         parameter_list.append(('', ''))  # 分割行
         parameter_list.extend([(label, '0x420') for label, key in lang['table_420']])
-        parameter_list.append(('', ''))  # 分割行
         parameter_list.extend([(label, '0x430') for label, key in lang['table_430']])
-        parameter_list.append(('', ''))  # 分割行
         parameter_list.extend([(label, '0x440') for label, key in lang['table_440']])
-        parameter_list.append(('', ''))  # 分割行
         parameter_list.extend([(label, '0x450') for label, key in lang['table_450']])
+        parameter_list.append(('', ''))  # 分割行
         parameter_list.extend([(label, '0x460') for label, key in lang['table_460']])
         parameter_list.append(('', ''))  # 分割行
         parameter_list.extend([(label, '0x470') for label, key in lang['table_470']])
-        parameter_list.extend([(label, '0x480') for label, key in lang['table_480']])
         parameter_list.append(('', ''))  # 分割行
-        parameter_list.extend([(label, '0x490') for label, key in lang['table_490']])
+        parameter_list.extend([(label, '0x600') for label, key in lang['table_600']])
+        parameter_list.extend([(label, '0x610') for label, key in lang['table_610']])
         parameter_list.append(('', ''))  # 分割行
-        parameter_list.extend([(label, '0x4A0') for label, key in lang['table_4A0']])
+        parameter_list.extend([(label, '0x620') for label, key in lang['table_620']])
         parameter_list.append(('', ''))  # 分割行
-        parameter_list.extend([(label, '0x4B0') for label, key in lang['table_4B0']])
-        parameter_list.extend([(label, '0x4C0') for label, key in lang['table_4C0']])
-        parameter_list.extend([(label, '0x4D0') for label, key in lang['table_4D0']])
+        parameter_list.extend([(label, '0x630') for label, key in lang['table_630']])
+        parameter_list.append(('', ''))  # 分割行
+        parameter_list.extend([(label, '0x640') for label, key in lang['table_640']])
+        parameter_list.append(('', ''))  # 分割行
+        parameter_list.extend([(label, '0x650') for label, key in lang['table_650']])
+        parameter_list.extend([(label, '0x660') for label, key in lang['table_660']])
+        parameter_list.append(('', ''))  # 分割行
+        parameter_list.extend([(label, '0x670') for label, key in lang['table_670']])
+        parameter_list.extend([(label, '0x680') for label, key in lang['table_680']])
+        parameter_list.append(('', ''))  # 分割行
+        parameter_list.extend([(label, '0x690') for label, key in lang['table_690']])
+        parameter_list.append(('', ''))  # 分割行
+        parameter_list.extend([(label, '0x6A0') for label, key in lang['table_6A0']])
+        parameter_list.append(('', ''))  # 分割行
+        parameter_list.extend([(label, '0x6B0') for label, key in lang['table_6B0']])
+        parameter_list.extend([(label, '0x6C0') for label, key in lang['table_6C0']])
+        parameter_list.extend([(label, '0x6D0') for label, key in lang['table_6D0']])
         
         # 批量更新表格
         items = self.data_tree.get_children()
