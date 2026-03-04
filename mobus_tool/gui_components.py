@@ -82,7 +82,8 @@ class OverviewFrame(ttk.Frame):
             ],
             64952:[
                 {"name": "current_capacity", "label": "current_capacity"},
-                {"name": "current_charge","label": "current_charge"}
+                {"name": "current_charge","label": "current_charge"},
+                {"name": "product_version","label": "product_version"}
             ]
 
         }

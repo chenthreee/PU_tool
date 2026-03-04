@@ -282,12 +282,12 @@
                     },
                     {
 
-                        "name": "int_con_ot",
+                        "name": "ICON_OT",
                         "value": 21
                     },
                     {
                         
-                        "name": "ext_con_ot",
+                        "name": "POL_OT",
                         "value": 22
                     }
                         
