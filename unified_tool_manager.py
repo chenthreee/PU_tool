@@ -53,8 +53,8 @@ except ImportError as e:
 create_can_embedded = None
 create_uart_embedded = None
 
-version = "V1.0.20"
-date = "2026-03-04"
+version = "V1.0.22"
+date = "2026-03-23"
 
 class UnifiedToolManager:
     """统一工具管理器"""

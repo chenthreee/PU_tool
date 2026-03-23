@@ -565,24 +565,125 @@
             },         
             {
                 "access": "RW",
-                "name": "dch_soc_ocv_table",
-                "label": "dch_soc_ocv_table",
-                "desc": "dch_soc_ocv_table",
-                "type": "int16 array",
-                "size": 11,
-                "units": "mV",
+                "name": "dch_soc_ocv_table1_temp",
+                "label": "dch_soc_ocv_table1_temp",
+                "desc": "dch_soc_ocv_table1_temp",
+                "type": "int16",
+                "size": 1,
+                "units": "0.1℃",
                 "offset": 82
             },
             {
                 "access": "RW",
-                "name": "chg_soc_ocv_table",
-                "label": "chg_soc_ocv_table",
-                "desc": "chg_soc_ocv_table",
+                "name": "dch_soc_ocv_table1",
+                "label": "dch_soc_ocv_table1",
+                "desc": "dch_soc_ocv_table1",
                 "type": "int16 array",
                 "size": 11,
                 "units": "mV",
-                "offset": 93
+                "offset": 83
             },
+            {
+                "access": "RW",
+                "name": "dch_soc_ocv_table2_temp",
+                "label": "dch_soc_ocv_table2_temp",
+                "desc": "dch_soc_ocv_table2_temp",
+                "type": "int16",
+                "size": 1,
+                "units": "0.1℃",
+                "offset": 94
+            },
+            {
+                "access": "RW",
+                "name": "dch_soc_ocv_table2",
+                "label": "dch_soc_ocv_table2",
+                "desc": "dch_soc_ocv_table2",
+                "type": "int16 array",
+                "size": 11,
+                "units": "mV",
+                "offset": 95
+            },
+            {
+                "access": "RW",
+                "name": "dch_soc_ocv_table3_temp",
+                "label": "dch_soc_ocv_table3_temp",
+                "desc": "dch_soc_ocv_table3_temp",
+                "type": "int16",
+                "size": 1,
+                "units": "0.1℃",
+                "offset": 106
+            },
+            {
+                "access": "RW",
+                "name": "dch_soc_ocv_table3",
+                "label": "dch_soc_ocv_table3",
+                "desc": "dch_soc_ocv_table3",
+                "type": "int16 array",
+                "size": 11,
+                "units": "mV",
+                "offset": 107
+            },
+            {
+                "access": "RW",
+                "name": "chg_soc_ocv_table1_temp",
+                "label": "chg_soc_ocv_table1_temp",
+                "desc": "chg_soc_ocv_table1_temp",
+                "type": "int16",
+                "size": 1,
+                "units": "0.1℃",
+                "offset": 118
+            },
+            {
+                "access": "RW",
+                "name": "chg_soc_ocv_table1",
+                "label": "chg_soc_ocv_table1",
+                "desc": "chg_soc_ocv_table1",
+                "type": "int16 array",
+                "size": 11,
+                "units": "mV",
+                "offset": 119
+            },
+            {
+                "access": "RW",
+                "name": "chg_soc_ocv_table2_temp",
+                "label": "chg_soc_ocv_table2_temp",
+                "desc": "chg_soc_ocv_table2_temp",
+                "type": "int16",
+                "size": 1,
+                "units": "0.1℃",
+                "offset": 130
+            },
+            {
+                "access": "RW",
+                "name": "chg_soc_ocv_table2",
+                "label": "chg_soc_ocv_table2",
+                "desc": "chg_soc_ocv_table2",
+                "type": "int16 array",
+                "size": 11,
+                "units": "mV",
+                "offset": 131
+            },
+            {
+                "access": "RW",
+                "name": "chg_soc_ocv_table3_temp",
+                "label": "chg_soc_ocv_table3_temp",
+                "desc": "chg_soc_ocv_table3_temp",
+                "type": "int16",
+                "size": 1,
+                "units": "0.1℃",
+                "offset": 142
+            },
+            {
+                "access": "RW",
+                "name": "chg_soc_ocv_table3",
+                "label": "chg_soc_ocv_table3",
+                "desc": "chg_soc_ocv_table3",
+                "type": "int16 array",
+                "size": 11,
+                "units": "mV",
+                "offset": 143
+            },
+            
             {
                 "access": "RW",
                 "name": "soc_ocv_low_limit",
@@ -591,7 +692,7 @@
                 "type": "int16",
                 "size": 1,
                 "units": "%",
-                "offset": 104
+                "offset": 154
             },
             {
                 "access": "RW",
@@ -601,7 +702,7 @@
                 "type": "int16",
                 "size": 1,
                 "units": "%",
-                "offset": 105
+                "offset": 155
             },
             
             {
@@ -612,7 +713,7 @@
                 "type": "int32",
                 "size": 2,
                 "units": "mAh",
-                "offset": 106
+                "offset": 156
             },  
             {
                 "access": "RW",
@@ -622,7 +723,7 @@
                 "type": "uint16",
                 "size": 1,
                 "units": "Wh",
-                "offset": 108
+                "offset": 158
             },
             {
                 "access": "RW",
@@ -632,7 +733,7 @@
                 "type": "uint16",
                 "size": 1,
                 "units": "W",
-                "offset": 109
+                "offset": 159
             },
             {
                 "access": "RW",
@@ -642,7 +743,7 @@
                 "type": "uint16",
                 "size": 1,
                 "units": "W",
-                "offset": 110
+                "offset": 160
             },
             {
                 "access": "RW",
@@ -652,7 +753,7 @@
                 "type": "uint16",
                 "size": 1,
                 "units": "W",
-                "offset": 111
+                "offset": 161
             },
             {
                 "access": "RW",
@@ -662,7 +763,7 @@
                 "type": "uint16",
                 "size": 1,
                 "units": "%",
-                "offset": 112
+                "offset": 162
             },
             {
                 "access": "RW",
@@ -672,7 +773,7 @@
                 "type": "uint16",
                 "size": 1,
                 "units": "%",
-                "offset": 113
+                "offset": 163
             },
             {
                 "access": "RW",
@@ -681,7 +782,7 @@
                 "desc": "battery_type",
                 "type": "enum16",
                 "size": 1,
-                "offset": 114,
+                "offset": 164,
                 "symbols": [
                     {
                         "name": "NOT APPLICABLE_UNKNOWN",
@@ -740,7 +841,7 @@
                 "desc": "product_manufactor",
                 "type": "string",
                 "size": 16,
-                "offset": 115
+                "offset": 165
             },
             {
                 "access": "RW",
@@ -749,7 +850,7 @@
                 "desc": "product_model",
                 "type": "string",
                 "size": 16,
-                "offset": 131
+                "offset": 181
             },
             {
                 "access": "RW",
@@ -758,7 +859,7 @@
                 "desc": "product_options",
                 "type": "string",
                 "size": 8,
-                "offset": 147
+                "offset": 197
             },
             {
                 "access": "RW",
@@ -767,7 +868,7 @@
                 "desc": "product_version",
                 "type": "string",
                 "size": 8,
-                "offset": 155
+                "offset": 205
             },
             {
                 "access": "RW",
@@ -776,7 +877,7 @@
                 "desc": "product_sn",
                 "type": "string",
                 "size": 16,
-                "offset": 163
+                "offset": 213
             },
             {
                 "access": "RW",
@@ -785,7 +886,7 @@
                 "desc": "warranty_date",
                 "type": "uint32",
                 "size": 2,
-                "offset": 179
+                "offset": 229
             },
             {
                 "access": "RW",
@@ -794,7 +895,7 @@
                 "desc": "production_date",
                 "type": "uint32",
                 "size": 2,
-                "offset": 181
+                "offset": 231
             },
             {
                 "access": "RW",
@@ -803,7 +904,7 @@
                 "desc": "installation_date",
                 "type": "uint32",
                 "size": 2,
-                "offset": 183
+                "offset": 233
             },
             {
                 "access": "RW",
@@ -812,7 +913,7 @@
                 "desc": "customer_sn",
                 "type": "string",
                 "size": 24,
-                "offset": 185
+                "offset": 235
             },
             {
                 "access": "RW",
@@ -821,7 +922,7 @@
                 "desc": "customer_product_name",
                 "type": "string",
                 "size": 24,
-                "offset": 209
+                "offset": 259
             }
         ],
         "type": "group"
