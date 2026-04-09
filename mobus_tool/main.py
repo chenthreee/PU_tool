@@ -14,7 +14,7 @@ from mobus_tool.sunspec_protocol import SunSpecProtocol
 from mobus_tool.modbus_client import ModbusClient
 from mobus_tool.gui_components import ConnectionFrame, DataTableFrame, OverviewFrame
 from mobus_tool.language_manager import LanguageManager
-#from mobus_tool.excel_recorder import ExcelHistoryRecorder
+from mobus_tool.csv_recorder import CsvHistoryRecorder
 
 class SunSpecGUI:
     """SunSpec协议GUI界面"""
@@ -37,8 +37,8 @@ class SunSpecGUI:
         self.modbus_client = ModbusClient()
         self.sunspec_protocol = SunSpecProtocol()
         
-        # # Excel历史记录器（不指定路径，启用时自动生成）
-        # self.excel_recorder = ExcelHistoryRecorder(None)
+        # CSV历史记录器（不指定目录，启用时自动生成带时间戳的文件夹）
+        self.csv_recorder = CsvHistoryRecorder()
         
         # 状态管理
         self.is_scan_base_addr = False
@@ -68,6 +68,11 @@ class SunSpecGUI:
         # UI初始化
         self.setup_gui()
         self.bind_events()
+
+        # 默认勾选CSV记录，启动时自动enable
+        if getattr(self, 'csv_record_var', None) and self.csv_record_var.get():
+            save_dir = self.csv_recorder.enable()
+            self.csv_dir_var.set(os.path.basename(save_dir))
         
     def _init_window(self):
         """初始化窗口"""
@@ -369,22 +374,20 @@ class SunSpecGUI:
         interval_entry = ttk.Entry(btn_frame, textvariable=self.auto_read_interval_var, width=5)
         interval_entry.pack(side=tk.LEFT)
 
-        # # Excel历史记录
-        # self.excel_record_var = tk.BooleanVar(value=False)
-        # self.excel_record_check = ttk.Checkbutton(
-        #     btn_frame,
-        #     text="记录历史到Excel",
-        #     variable=self.excel_record_var,
-        #     command=self.on_excel_record_changed,
-        # )
-        # self.excel_record_check.pack(side=tk.LEFT, padx=(15, 0))
+        # CSV历史记录勾选框（默认勾选）
+        self.csv_record_var = tk.BooleanVar(value=True)
+        self.csv_record_check = ttk.Checkbutton(
+            btn_frame,
+            text="Record to CSV",
+            variable=self.csv_record_var,
+            command=self.on_csv_record_changed,
+        )
+        self.csv_record_check.pack(side=tk.LEFT, padx=(15, 0))
 
-        # self.excel_path_var = tk.StringVar(value="")
-        # self.excel_path_entry = ttk.Entry(btn_frame, textvariable=self.excel_path_var, width=35)
-        # self.excel_path_entry.pack(side=tk.LEFT, padx=(5, 0))
-
-        # self.excel_browse_btn = ttk.Button(btn_frame, text="选择", command=self.select_excel_file)
-        # self.excel_browse_btn.pack(side=tk.LEFT, padx=(5, 0))
+        self.csv_dir_var = tk.StringVar(value="auto")
+        self.csv_dir_label = ttk.Label(btn_frame, textvariable=self.csv_dir_var,
+                                       foreground="gray", font=('TkDefaultFont', 8))
+        self.csv_dir_label.pack(side=tk.LEFT, padx=(4, 0))
 
         # 垂直可分割区域：上-数据页签，下-日志区域（支持拖动调整高度）
         self.split = tk.PanedWindow(main_frame, orient=tk.VERTICAL, sashrelief=tk.RAISED)
@@ -881,7 +884,7 @@ class SunSpecGUI:
         # 获取用户文档目录作为默认保存位置
         try:
             import os.path
-            default_dir = os.path.expanduser("~/Documents")
+            default_dir = os.path.expanduser("./Documents")
             if not os.path.exists(default_dir):
                 default_dir = os.getcwd()  # 如果文档目录不存在，使用当前目录
         except:
@@ -1217,6 +1220,18 @@ class SunSpecGUI:
         else:
             return None, "Operation timeout"
 
+    def on_csv_record_changed(self):
+        """CSV记录勾选框状态改变"""
+        if self.csv_record_var.get():
+            save_dir = self.csv_recorder.enable()
+            short = os.path.basename(save_dir)
+            self.csv_dir_var.set(short)
+            self.log_message(f"CSV recording enabled: {save_dir}")
+        else:
+            self.csv_recorder.disable()
+            self.csv_dir_var.set("auto")
+            self.log_message("CSV recording disabled")
+
     # def on_excel_record_changed(self):
     #     """Excel历史记录勾选框状态改变"""
     #     if self.excel_record_var.get():
@@ -1224,7 +1239,7 @@ class SunSpecGUI:
     #         path = (self.excel_path_var.get() or "").strip()
     #         if path:
     #             self.excel_recorder.set_excel_path(path)
-            
+
     #         # 启用记录（会自动生成路径如果还没有）
     #         self.excel_recorder.enable()
     #         self.excel_path_var.set(self.excel_recorder.excel_path or "")
@@ -1238,14 +1253,14 @@ class SunSpecGUI:
     #     from tkinter import filedialog
     #     timestamp = time.strftime("%Y%m%d_%H%M%S")
     #     default_filename = f"SunSpec3_Log_{timestamp}.xlsx"
-        
+
     #     try:
     #         default_dir = os.path.expanduser("~/Documents")
     #         if not os.path.exists(default_dir):
     #             default_dir = os.getcwd()
     #     except Exception:
     #         default_dir = os.getcwd()
-        
+
     #     filename = filedialog.asksaveasfilename(
     #         defaultextension=".xlsx",
     #         filetypes=[("Excel files", "*.xlsx"), ("All files", "*.*")],
@@ -1926,12 +1941,12 @@ class SunSpecGUI:
                         # 解析数据
                         parsed_data = self.sunspec_protocol.parse_table_data(table_id, actual_raw_data)
                         if parsed_data:
-                            # # 记录历史到Excel（使用raw值，不做symbols解析，不展开bit）
-                            # try:
-                            #     if hasattr(self, 'excel_recorder') and getattr(self, 'excel_record_var', None) and self.excel_record_var.get():
-                            #         self.excel_recorder.record_model_data(table_id, parsed_data, receive_timestamp)
-                            # except Exception as e:
-                            #     self.schedule_on_ui(self.log_message, f"Excel record error for table {table_id}: {e}")
+                            # 记录到CSV（所有表格，有时间戳）
+                            try:
+                                if getattr(self, 'csv_record_var', None) and self.csv_record_var.get():
+                                    self.csv_recorder.record_model_data(table_id, parsed_data, receive_timestamp)
+                            except Exception as e:
+                                self.schedule_on_ui(self.log_message, f"CSV record error for table {table_id}: {e}")
 
                             # 通过主线程更新UI，传递接收时间戳
                             self._schedule_ui_update(table_id, parsed_data, receive_timestamp)
@@ -2148,6 +2163,10 @@ class SunSpecGUI:
                     pass
                 self._log_timer = None
             
+            # 关闭CSV记录器
+            if hasattr(self, 'csv_recorder'):
+                self.csv_recorder.close()
+
             # 关闭Excel记录器
             # if hasattr(self, 'excel_recorder'):
             #     self.excel_recorder.close()
