@@ -47,7 +47,6 @@ class CsvHistoryRecorder:
 
             timestamp = time.strftime("%Y%m%d_%H%M%S")
             try:
-                baase=os.path.expanduser("~/Documents")
                 #可以考虑是 当前路劲还是 用户目录~/Documents
                 #C:\Users\Administrator\Documents 
                 base = os.path.expanduser("./Documents")
@@ -67,7 +66,7 @@ class CsvHistoryRecorder:
                 target=self._worker, daemon=True, name="CsvRecorderWorker"
             )
             self._writer_thread.start()
-        #有正常打印
+        #有正常打印 
         print(f"[CsvRecorder] enabled, save_dir={self.save_dir}")
         return self.save_dir
 
@@ -78,7 +77,7 @@ class CsvHistoryRecorder:
         if self._writer_thread and self._writer_thread.is_alive():
             self._writer_thread.join(timeout=5.0)
         self._close_all_files()
-        #整个界面关闭后 有正常打印这句
+        #整个界面关闭后 有正常打印这句 [CsvRecorder] disable
         print("[CsvRecorder] disabled")
 
     def record_model_data(self, model_id: int, parsed_data: Dict[str, Any],
@@ -104,7 +103,7 @@ class CsvHistoryRecorder:
     def _worker(self):
         """写线程：持续从队列取数据写入对应CSV"""
         while True:
-            # 队列空且收到停止信号，退出
+            # 队列空且收到停止信号，退出 
             if self._stop_event.is_set() and self._write_queue.empty():
                 break
             try:
@@ -128,7 +127,7 @@ class CsvHistoryRecorder:
             writer = file_info["writer"]
             headers = file_info["headers"]
 
-            # 构造行：第一列时间戳
+            # 构造行：第一列时间戳 格式 eg：2026-04-10 15:29:33
             dt_str = datetime.fromtimestamp(timestamp).strftime("%Y-%m-%d %H:%M:%S")
             row = [dt_str]
 
@@ -176,6 +175,7 @@ class CsvHistoryRecorder:
                 writer.writerow(headers)
                 f.flush()
 
+            #此处是凭借file info 到时候可以批量一整个数据结构
             file_info = {
                 "file": f,
                 "writer": writer,
@@ -200,7 +200,7 @@ class CsvHistoryRecorder:
             val = field_data["raw_value"]
         else:
             val = field_data.get("value")
-
+        
         if isinstance(val, (list, tuple)):
             try:
                 return ",".join(str(int(x)) for x in val)
