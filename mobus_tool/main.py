@@ -389,6 +389,17 @@ class SunSpecGUI:
                                        foreground="gray", font=('TkDefaultFont', 8))
         self.csv_dir_label.pack(side=tk.LEFT, padx=(4, 0))
 
+        # SN Check / Generate 按钮
+        self.sn_btn = ttk.Button(btn_frame, text="SN Check/Generate",
+                                 command=self.on_check_generate_sn)
+        self.sn_btn.pack(side=tk.LEFT, padx=(15, 0))
+
+        # SN 状态标签
+        self.sn_status_var = tk.StringVar(value="")
+        self.sn_status_label = ttk.Label(btn_frame, textvariable=self.sn_status_var,
+                                         foreground="gray", font=('TkDefaultFont', 8))
+        self.sn_status_label.pack(side=tk.LEFT, padx=(4, 0))
+
         # 垂直可分割区域：上-数据页签，下-日志区域（支持拖动调整高度）
         self.split = tk.PanedWindow(main_frame, orient=tk.VERTICAL, sashrelief=tk.RAISED)
         self.split.pack(fill=tk.BOTH, expand=True, padx=(10, 10), pady=(0, 10))
@@ -1232,6 +1243,51 @@ class SunSpecGUI:
             self.csv_dir_var.set("auto")
             self.log_message("CSV recording disabled")
 
+    def on_check_generate_sn(self):
+        """SN Check/Generate 按钮点击处理"""
+        if not self.modbus_client.is_connected():
+            self.notify("warning", "Warning", "Please connect to the device first.")
+            return
+        if not self.is_scan_model_addr:
+            self.notify("warning", "Warning", "Please scan model address first.")
+            return
+        if 64952 not in getattr(self, 'model_base_addrs', {}):
+            self.notify("warning", "Warning", "Model 64952 not found. Please scan models first.")
+            return
+
+        # 禁用按钮，避免重复点击
+        self.sn_btn.configure(state="disabled")
+        self.sn_status_var.set("Checking SN...")
+
+        def on_sn_result(result, error=None):
+            # 恢复按钮
+            self.sn_btn.configure(state="normal")
+
+            if error:
+                self.sn_status_var.set("Error")
+                self.log_message(f"SN check/generate error: {error}")
+                return
+
+            if not result:
+                self.sn_status_var.set("Failed")
+                self.log_message("SN check/generate failed: no result")
+                return
+
+            if result.get("sn_valid"):
+                sn = result.get("sn", "")
+                self.sn_status_var.set(f"OK: {sn}")
+                self.log_message(f"SN is valid: {sn}")
+            elif result.get("sn_written"):
+                sn = result.get("sn", "")
+                self.sn_status_var.set(f"Written: {sn}")
+                self.log_message(f"New SN generated and written: {sn}")
+            else:
+                err_detail = result.get("error", "unknown")
+                self.sn_status_var.set(f"Write failed: {err_detail}")
+                self.log_message(f"SN write failed: {err_detail}")
+
+        self._execute_operation("check_sn", None, on_sn_result, timeout=15.0)
+
     # def on_excel_record_changed(self):
     #     """Excel历史记录勾选框状态改变"""
     #     if self.excel_record_var.get():
@@ -1542,6 +1598,8 @@ class SunSpecGUI:
                     elif operation == "write_field":
                         table_id, field_name, value = params
                         result = self._do_write_field(table_id, field_name, value)
+                    elif operation == "check_sn":
+                        result = self._do_check_sn()
                     else:
                         error = f"Unknown operation: {operation}"
                         
@@ -1834,6 +1892,74 @@ class SunSpecGUI:
         except Exception as e:
             return {"success": False, "error": str(e)}
     
+    def _do_check_sn(self):
+        """在通信线程中执行SN检查/生成/写入操作"""
+        try:
+            from mobus_tool.sn_generator import check_and_fix_sn
+        except ImportError:
+            try:
+                from sn_generator import check_and_fix_sn
+            except ImportError:
+                return {"success": False, "error": "sn_generator module not found"}
+
+        # 检查 model 64952 是否已扫描到
+        if not hasattr(self, 'model_base_addrs') or 64952 not in self.model_base_addrs:
+            return {"success": False, "error": "model_64952_not_found"}
+
+        base_addr = self.model_base_addrs[64952]
+        # product_sn: offset=213, size=16 (registers), type=string
+        sn_offset = 213
+        sn_size = 16  # 16 寄存器，每寄存器2字节，共32字节ASCII字符
+        sn_addr = base_addr + sn_offset
+
+        # 读取 product_sn 寄存器
+        raw_regs = self.modbus_client.read_holding_registers(sn_addr, sn_size)
+        if not raw_regs:
+            return {"success": False, "error": "failed_to_read_product_sn"}
+
+        # 将寄存器数据解码为字符串
+        raw_bytes = bytearray()
+        for reg in raw_regs:
+            raw_bytes.append((reg >> 8) & 0xFF)
+            raw_bytes.append(reg & 0xFF)
+        existing_sn = raw_bytes.decode('ascii', errors='ignore').rstrip('\x00').strip()
+
+        self.schedule_on_ui(self.log_message, f"Read product_sn from device: '{existing_sn}'")
+
+        # 验证/修复 SN
+        try:
+            sn_valid, sn_value = check_and_fix_sn(existing_sn)
+        except Exception as e:
+            return {"success": False, "error": f"sn_check_error: {e}"}
+
+        if sn_valid:
+            # SN 合法，无需写入
+            self.schedule_on_ui(self.log_message, f"product_sn is valid: {sn_value}")
+            return {"success": True, "sn_valid": True, "sn": sn_value}
+
+        # SN 不合法，先写入密码解锁，再写入新 SN
+        self.schedule_on_ui(self.log_message, f"product_sn invalid or empty, writing new SN: {sn_value}")
+
+        # 第一步：写入密码（password 字段 offset=3, size=8, type=string）
+        _PASSWORD = "bqc-pu1011"
+        self.schedule_on_ui(self.log_message, "Writing password to unlock device...")
+        pwd_result = self._do_write_field(64952, 'password', _PASSWORD)
+        if not pwd_result.get("success"):
+            err = pwd_result.get("error", "password_write_failed")
+            self.schedule_on_ui(self.log_message, f"Password write failed: {err}")
+            return {"success": False, "error": f"password_write_failed: {err}"}
+        self.schedule_on_ui(self.log_message, "Password written, writing new SN...")
+
+        # 第二步：写入新 SN
+        write_result = self._do_write_field(64952, 'product_sn', sn_value)
+        if write_result.get("success"):
+            self.schedule_on_ui(self.log_message, f"New SN written successfully: {sn_value}")
+            return {"success": True, "sn_written": True, "sn": sn_value}
+        else:
+            err = write_result.get("error", "write_failed")
+            self.schedule_on_ui(self.log_message, f"Failed to write new SN: {err}")
+            return {"success": False, "error": err, "sn": sn_value}
+
     def _read_single_table_raw_data(self, table_id):
         """读取单个表格的原始数据（不解析）"""
         import time  # 在函数开始就导入time模块
