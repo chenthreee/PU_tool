@@ -37,24 +37,14 @@ class CsvHistoryRecorder:
     def enable(self, save_dir: str = None):
         """启用记录。可传入目录路径，不传则自动生成带时间戳的目录"""
         if save_dir:
-            self.save_dir = save_dir
+            # 用户指定了父目录，在其下建带时间戳的子文件夹
+            timestamp = time.strftime("%Y%m%d_%H%M%S")
+            self.save_dir = os.path.join(save_dir, f"SunSpec_Log_{timestamp}")
 
         if not self.save_dir:
-            #时间戳 如果是重新关掉打开的exe运行 那就会直接新建一个文件
-            #否则 就是在原csv上追加 追加的第一列就会写下这个时间戳
-            #不过因为是csv文件 每次timestamp时间戳重新设置了单元格式 依旧无法保存
-            #改成使用excel的话 同时打开多个openpyxl文件的会有卡顿的问题
-
+            # 未指定目录，在当前目录下建带时间戳的子文件夹
             timestamp = time.strftime("%Y%m%d_%H%M%S")
-            try:
-                #可以考虑是 当前路劲还是 用户目录~/Documents
-                #C:\Users\Administrator\Documents 
-                base = os.path.expanduser("./Documents")
-                #如果不存在的话就是直接获取的当前目录存放这些文件即可
-                if not os.path.exists(base):
-                    base = os.getcwd()
-            except Exception:
-                base = os.getcwd()
+            base = os.getcwd()
             self.save_dir = os.path.join(base, f"SunSpec_Log_{timestamp}")
 
         os.makedirs(self.save_dir, exist_ok=True)

@@ -54,7 +54,7 @@ create_can_embedded = None
 create_uart_embedded = None
 
 version = "V1.0.25"
-date = "2026-05-09"
+date = "2026-05-11"
 
 class UnifiedToolManager:
     """统一工具管理器"""

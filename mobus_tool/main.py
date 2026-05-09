@@ -69,10 +69,11 @@ class SunSpecGUI:
         self.setup_gui()
         self.bind_events()
 
-        # 默认勾选CSV记录，启动时自动enable
+        # 默认勾选CSV记录，启动时自动enable（使用当前目录）
+        self._csv_save_dir = None  # 用户未手动选择时为 None，使用默认当前目录
         if getattr(self, 'csv_record_var', None) and self.csv_record_var.get():
             save_dir = self.csv_recorder.enable()
-            self.csv_dir_var.set(os.path.basename(save_dir))
+            self.csv_dir_var.set(os.path.basename(save_dir) or save_dir)
         
     def _init_window(self):
         """初始化窗口"""
@@ -384,7 +385,12 @@ class SunSpecGUI:
         )
         self.csv_record_check.pack(side=tk.LEFT, padx=(15, 0))
 
-        self.csv_dir_var = tk.StringVar(value="auto")
+        # 选择保存路径按钮
+        self.csv_browse_btn = ttk.Button(btn_frame, text="📁", width=3,
+                                         command=self.on_browse_csv_dir)
+        self.csv_browse_btn.pack(side=tk.LEFT, padx=(4, 0))
+
+        self.csv_dir_var = tk.StringVar(value="(default)")
         self.csv_dir_label = ttk.Label(btn_frame, textvariable=self.csv_dir_var,
                                        foreground="gray", font=('TkDefaultFont', 8))
         self.csv_dir_label.pack(side=tk.LEFT, padx=(4, 0))
@@ -1231,16 +1237,33 @@ class SunSpecGUI:
         else:
             return None, "Operation timeout"
 
+    def on_browse_csv_dir(self):
+        """弹出文件夹选择对话框，让用户选择CSV保存路径"""
+        from tkinter import filedialog
+        chosen = filedialog.askdirectory(
+            title="Select CSV save directory",
+            initialdir=getattr(self, '_csv_save_dir', None) or os.getcwd(),
+        )
+        if chosen:
+            self._csv_save_dir = chosen
+            self.csv_dir_var.set(os.path.basename(chosen) or chosen)
+            self.log_message(f"CSV save directory set to: {chosen}")
+            # 如果当前正在记录，重启记录器以使用新路径
+            if self.csv_record_var.get():
+                self.csv_recorder.disable()
+                save_dir = self.csv_recorder.enable(chosen)
+                self.log_message(f"CSV recorder restarted with new directory: {save_dir}")
+
     def on_csv_record_changed(self):
         """CSV记录勾选框状态改变"""
         if self.csv_record_var.get():
-            save_dir = self.csv_recorder.enable()
-            short = os.path.basename(save_dir)
-            self.csv_dir_var.set(short)
+            save_dir = self.csv_recorder.enable(getattr(self, '_csv_save_dir', None))
+            self.csv_dir_var.set(os.path.basename(save_dir) or save_dir)
             self.log_message(f"CSV recording enabled: {save_dir}")
         else:
             self.csv_recorder.disable()
-            self.csv_dir_var.set("auto")
+            chosen = getattr(self, '_csv_save_dir', None)
+            self.csv_dir_var.set(os.path.basename(chosen) if chosen else "(default)")
             self.log_message("CSV recording disabled")
 
     def on_check_generate_sn(self):
