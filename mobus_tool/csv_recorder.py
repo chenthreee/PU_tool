@@ -106,7 +106,7 @@ class CsvHistoryRecorder:
                 self._write_row(model_id, parsed_data, timestamp)
             except Exception as e:
                 print(f"[CsvRecorder] write error model {model_id}: {e}")
-
+    
     def _write_row(self, model_id: int, parsed_data: Dict[str, Any], timestamp: float):
         """将一行数据写入对应model的CSV文件"""
         with self._lock:
@@ -131,7 +131,7 @@ class CsvHistoryRecorder:
                         value = self._extract_value(field_data)
                         break
                 row.append(value)
-
+            
             writer.writerow(row)
             file_info["file"].flush()  # 每行立即刷盘，崩溃也不丢数据
 

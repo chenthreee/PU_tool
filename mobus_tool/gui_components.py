@@ -1158,6 +1158,8 @@ class ConnectionFrame(ttk.LabelFrame):
                      values=["9600", "19200", "38400", "57600", "115200"], 
                      width=8)
         self.baud_combo.grid(row=0, column=4, padx=(0, 10))
+        self.baud_rate_label.grid_remove()
+        self.baud_combo.grid_remove()
         
         # 第二行：从站ID和其他设置
         self.slave_id_label = ttk.Label(rtu_frame, text=self.language_manager.get_text("slave_id"))
@@ -1173,6 +1175,8 @@ class ConnectionFrame(ttk.LabelFrame):
         self.timeout_spinbox = ttk.Spinbox(rtu_frame, textvariable=self.timeout_var, 
                                      from_=1, to=60, width=8)
         self.timeout_spinbox.grid(row=1, column=3, padx=(0, 10))
+        self.timeout_label.grid_remove()
+        self.timeout_spinbox.grid_remove()
         
         # 连接按钮
         self.connect_rtu_btn = ttk.Button(rtu_frame, text=self.language_manager.get_text("connect_rtu"))
