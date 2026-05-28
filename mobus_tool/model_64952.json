@@ -923,6 +923,15 @@
                 "type": "string",
                 "size": 24,
                 "offset": 259
+            },
+            {
+                "access": "RW",
+                "name": "reset_password",
+                "label": "reset_password",
+                "desc": "reset_password",
+                "type": "uint16",
+                "size": 1,
+                "offset": 283
             }
         ],
         "type": "group"
